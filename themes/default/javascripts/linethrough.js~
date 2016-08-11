@@ -1,0 +1,13 @@
+  function toggleLinethrough() {
+     var elems = document.getElementsByClassName('del');
+     for (var i = 0; i < elems.length; i++) {
+        if (elems[i].style.textDecoration == "line-through" || elems[i].style.color == "#f22b0e") {
+           elems[i].style.textDecoration = "none";
+           elems[i].style.color = "#444444"
+        } else {
+           elems[i].style.textDecoration = "line-through";
+           elems[i].style.color = "#f22b0e";           
+        }
+     }
+  }
+

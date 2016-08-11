@@ -1,0 +1,12 @@
+  function toggleSuperscript() {
+     var elems = document.getElementsByClassName('sup');
+     for (var i = 0; i < elems.length; i++) {
+        if (elems[i].style.verticaAlign == "superscript" && elems[i].style.color == "#444444") {
+           elems[i].style.verticalAlign = "baseline";
+	   elems[i].style.color = "#3361a1";
+        } else {
+           elems[i].style.verticalAlign = "initial";
+           elems[i].style.color = "#444444";
+        }
+     }
+  }

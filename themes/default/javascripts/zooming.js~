@@ -1,0 +1,171 @@
+// Käsin rakennetun viewerin + XML-transkription zoomaus-, sivutus- ym. toiminnot
+
+$(document).ready(function() {
+
+  // Lataa kommentit listasta ja tekee jokaiselle popupin
+  $('#transcr2').load(function() {
+     $.each(comments, function(key, value) {
+       var first = $('#transcr2').contents().find('html, body').text().indexOf(key);
+       if (first >= 0) {
+          var last = first + key.length;
+          var ext = $('#transcr2').contents().find('html, body').text().indexOf(' ', last);
+          var ending = $('#transcr2').contents().find('html, body').text().substring(last, ext);
+          
+          if (ending.indexOf(",") >= 0) {
+              ending = ending.substring(0, ending.indexOf(","));
+          } else if (ending.indexOf(".") >= 0) {
+              ending = ending.substring(0, ending.indexOf("."));
+          } else if (ending.indexOf(";") >= 0) {
+              ending = ending.substring(0, ending.indexOf(";"));
+          } else if (ending.indexOf(":") >= 0) {
+              ending = ending.substring(0, ending.indexOf(":"));
+          }
+
+          var str = key + ending;
+
+          $('#transcr2').contents().find('html, body')
+          .html($('#transcr2').contents().find('html, body')
+          .html()
+          .replace(str, '<a class="comm tooltip bt" href="#">' + str + '<span>' + value + '</span></a>'));
+       }
+     });
+
+   }); 
+
+
+   // Kuvien & sivujen näyttö. Aluksi näytetään ensimmäinen kuva & vastavaan sivun transkriptio
+   $('.pic').not('.pic:first').hide();
+
+   var i = 0;
+   var j = 0;
+  
+   // Seuraavan kuvan ja sivun näyttäminen
+   $('#nextPic').click(function() {
+
+        if (i == $('#transcr2').contents().find('.page').length-1) {
+           return false;
+        }
+
+      	var nextPage = $('#transcr2').contents().find('.page:eq(' + i + ')').next();
+        var currentPic = $('.pic:eq(' + j + ')');
+        var nextPic = currentPic.next();
+
+        if (nextPage) {
+             nextPage.show().siblings('.page').hide();
+             if (!nextPage.find('.pb').hasClass(nextPage.prev().find('.pb').attr('class'))) {
+        	nextPic.show().siblings('.pic').hide();
+        	j++;
+             }
+        } 
+
+        i++;
+
+   });
+
+   // Edellisen kuvan ja sivun näyttäminen
+   $('#prevPic').click(function() {
+
+        if (i == 0) {
+           return false;
+        }
+
+        $('.pic:eq(' + i + ')').hide();
+        if ($('.pic:eq(' + i + ')').prev()) {
+           $('.pic:eq(' + i + ')').prev().show().prevAll().hide();
+        }
+
+      	var prevPage = $('#transcr2').contents().find('.page:eq(' + i + ')').prev();
+        var currentPic = $('.pic:eq(' + j + ')');
+        var prevPic = currentPic.prev();
+
+        if (prevPage) {
+             prevPage.show().siblings('.page').hide();
+             if (!prevPage.find('.pb').hasClass(prevPage.next().find('.pb').attr('class'))) {
+        	prevPic.show().siblings('.pic').hide();
+        	j--;
+             }
+        } 
+
+        i--;
+   });
+
+   // Kuvien zoomaus hiiren osoittimen kohdassa
+
+   var scale = 1;  // scale of the image
+   var xLast = 0;  // last x location on the screen
+   var yLast = 0;  // last y location on the screen
+   var xImage = 0; // last x location on the image
+   var yImage = 0; // last y location on the image
+
+   $('.pic').bind('mousewheel', function(e, delta) {
+
+        $('body').bind('mousewheel', function() {
+            return false;
+        });
+
+        // find current location on screen 
+        var xScreen = e.pageX - $(this).offset().left;
+        var yScreen = e.pageY - $(this).offset().top;
+
+        // find current location on the image at the current scale
+        xImage = xImage + ((xScreen - xLast) / scale);
+        yImage = yImage + ((yScreen - yLast) / scale);
+
+        // determine the new scale
+        if (delta > 0) {
+            scale *= 1.3;
+        } else if (delta < 0 && scale > 1) {
+            scale /= 1.3;
+        }
+        scale = scale < 1 ? 1 : (scale > 64 ? 64 : scale);
+
+        // determine the location on the screen at the new scale
+        var xNew = (xScreen - xImage) / scale;
+        var yNew = (yScreen - yImage) / scale;
+
+        // save the current screen location
+        xLast = xScreen;
+        yLast = yScreen;
+
+        // redraw
+        $('.pic')
+        .css('-moz-transform', 'scale(' + scale + ')' + 'translate(' + xNew + 'px, ' + yNew + 'px' + ')')
+        .css('-moz-transform-origin', xImage + 'px ' + yImage + 'px')
+        return false;
+
+    });
+
+
+    // Palauttaa kuvan alkuperäisen koon näkymässä
+    $('#origSize').click(function() {
+       	$('.pic').css('-moz-transform', 'scale(1)');	
+    });
+
+    // Koko sivun näkymä
+    $('#fullScreen').click(function() {
+       	$('.exhibit2a').addClass('fullscreen');
+        if ($('.exhibit2a').hasClass('fullscreen')) {
+          $('#fullScreen').hide();
+          $('#closeFull').show();
+        } else {
+          $('#fullScreen').show();
+          $('#closeFull').hide();
+        }
+    });
+
+   $('#closeFull').click(function() {
+        $('.exhibit2a').removeClass('fullscreen'):
+   });
+   // Kuvan liikuttaminen
+   $('.pic').draggable();
+
+   // Metadata-paneelin näyttäminen
+   $('#metadata').click(function() {
+      if ($('.infopanel').is(':hidden')) {
+         $('.infopanel').slideDown('fast');
+      } else {
+         $('.infopanel').slideUp('fast');
+      }
+   });
+
+});

@@ -1,0 +1,11 @@
+$(document).ready(function() {
+
+   $('#transcr2').load(function() {
+
+    var html = $('#transcr2').contents().find('html');
+
+    html.css('font-family', '"PT Serif", Times, serif');
+    html.css('word-break', 'break-word');
+    html.css('font-size', '16px');
+});
+
