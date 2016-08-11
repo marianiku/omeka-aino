@@ -7,7 +7,7 @@
 <xsl:output method="text" omit-xml-declaration="yes" indent="no"/>
 <xsl:template match="/">
     <xsl:text>"Title","Description","Creator","Source","Publisher","Date","Contributor","Rights","Relation","Identifier","XML","Image 1","Image 2","Image 3","Image 4","Image 5"&#10;</xsl:text>
-    <xsl:variable name="teiFiles" select="collection('/var/www/omeka/uploads/?select=*.xml')"/>
+    <xsl:variable name="teiFiles" select="collection('./?select=*.xml')"/>
     <xsl:for-each select="$teiFiles">
         <xsl:text>"</xsl:text>
         <xsl:value-of select="//tei:bibl" />
