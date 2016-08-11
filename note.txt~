@@ -1,6 +1,0 @@
-HTML sanitization: UV > lib > app.js, ll. 4649 -> lisätty class-attribuutti span-tagille
-
-TURVALLISUUSKYSYMYKSET: koodi-injektio ja Cross Site Scripting (XSS)
-
--style-attribuutti vaarallinen, koska sallii merkinnät, joita käytetään suoritettavassa koodissa (kaksoispiste, sulkeet)
--class-attribuutti ei salli kaksoispistettä, sulkeita, hakasulkeita, dollarmerkkiä jne. -> ei voi injektoida suoritettavaa koodia -> turvallisempi
