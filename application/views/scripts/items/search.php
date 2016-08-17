@@ -1,5 +1,5 @@
 <?php
-$pageTitle = __('Kirjehaku');
+$pageTitle = __('');
 echo head(array('title' => $pageTitle,
            'bodyclass' => 'items advanced-search'));
 ?>

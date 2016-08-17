@@ -2260,6 +2260,8 @@ th {
     border: solid 0.5px;
     border-radius: 5px;
     padding: 1em;
+    float: left;
+    margin-right: 20px;
   }
   #advanced-search-form .submit {
     float: right;

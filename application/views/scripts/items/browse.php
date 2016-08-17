@@ -3,7 +3,7 @@ $pageTitle = __('Selaa kirjeitä');
 echo head(array('title'=>$pageTitle,'bodyclass' => 'items browse'));
 ?>
 
-<h1><?php echo $pageTitle;?> <?php echo __('(%s total)', $total_results); ?></h1>
+<h1><?php echo __('Kirjeitä yhteensä %s', $total_results); ?></h1>
 
 <nav class="items-nav navigation secondary-nav">
     <!--<?php echo public_nav_items(); ?>-->
