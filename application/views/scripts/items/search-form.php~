@@ -87,7 +87,7 @@ $formAttributes['method'] = 'GET';
             </div>
         <?php endforeach; ?>
         </div>
-        <button type="button" class="add_search" style="border-radius: 2px;"><?php echo __('+'); ?></button>
+        <button type="button" class="add_search" style="border-radius: 2px;float:right;"><?php echo __('+'); ?></button>
     </div>
 
     <div id="search-by-range" class="field">

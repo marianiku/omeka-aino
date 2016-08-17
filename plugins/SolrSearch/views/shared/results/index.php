@@ -11,18 +11,18 @@
 
 
 <?php queue_css_file('results'); ?>
-<?php echo head(array('title' => __('Solr Search')));?>
+<?php echo head(array('title' => __('Solr-haku')));?>
 
 
-<h1><?php echo __('Search the Collection'); ?></h1>
+<h1><?php echo __('Hae kirjeitä'); ?></h1>
 
 
 <!-- Search form. -->
 <div class="solr">
   <form id="solr-search-form">
-    <input type="submit" value="Search" />
+    <input type="submit" value="Haku" />
     <span class="float-wrap">
-      <input type="text" title="<?php echo __('Search keywords') ?>" name="q" value="<?php
+      <input type="text" title="<?php echo __('Hae hakusanoilla') ?>" name="q" value="<?php
         echo array_key_exists('q', $_GET) ? $_GET['q'] : '';
       ?>" />
     </span>
@@ -59,7 +59,7 @@
 <!-- Facets. -->
 <div id="solr-facets">
 
-  <h2><?php echo __('Limit your search'); ?></h2>
+  <h2><?php echo __('Rajaa hakua'); ?></h2>
 
   <?php foreach ($results->facet_counts->facet_fields as $name => $facets): ?>
 
@@ -101,7 +101,7 @@
 
   <!-- Number found. -->
   <h2 id="num-found">
-    <?php echo $results->response->numFound; ?> results
+    Kirjeitä löytyi: <?php echo $results->response->numFound; ?>
   </h2>
 
   <?php foreach ($results->response->docs as $doc): ?>
@@ -119,7 +119,7 @@
         <a href="<?php echo $url; ?>" class="result-title"><?php
                 $title = is_array($doc->title) ? $doc->title[0] : $doc->title;
                 if (empty($title)) {
-                    $title = '<i>' . __('Untitled') . '</i>';
+                    $title = '<i>' . __('Nimetön') . '</i>';
                 }
                 echo $title;
             ?></a>

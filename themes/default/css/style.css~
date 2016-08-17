@@ -2259,7 +2259,6 @@ th {
     width: 40%;
     border: solid 0.5px;
     border-radius: 5px;
-    padding: 1em;
   }
   #advanced-search-form .submit {
     float: right;

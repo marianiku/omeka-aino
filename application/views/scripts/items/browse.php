@@ -1,12 +1,12 @@
 <?php
-$pageTitle = __('Browse Items');
+$pageTitle = __('Selaa kirjeitä');
 echo head(array('title'=>$pageTitle,'bodyclass' => 'items browse'));
 ?>
 
 <h1><?php echo $pageTitle;?> <?php echo __('(%s total)', $total_results); ?></h1>
 
 <nav class="items-nav navigation secondary-nav">
-    <?php echo public_nav_items(); ?>
+    <!--<?php echo public_nav_items(); ?>-->
 </nav>
 
 <?php echo item_search_filters(); ?>
@@ -16,12 +16,12 @@ echo head(array('title'=>$pageTitle,'bodyclass' => 'items browse'));
 <?php if ($total_results > 0): ?>
 
 <?php
-$sortLinks[__('Title')] = 'Dublin Core,Title';
-$sortLinks[__('Creator')] = 'Dublin Core,Creator';
-$sortLinks[__('Date Added')] = 'added';
+$sortLinks[__('Otsikko')] = 'Dublin Core,Title';
+$sortLinks[__('Kirjoittaja')] = 'Dublin Core,Creator';
+$sortLinks[__('Lisätty')] = 'added';
 ?>
 <div id="sort-links">
-    <span class="sort-label"><?php echo __('Sort by: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
+    <span class="sort-label"><?php echo __('Järjestä: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
 </div>
 
 <?php endif; ?>
