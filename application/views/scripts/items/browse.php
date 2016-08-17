@@ -36,6 +36,12 @@ $sortLinks[__('Lisätty')] = 'added';
     </div>
     <?php endif; ?>
 
+    <?php if ($date = metadata('item', array('Dublin Core', 'Date'), array('snippet'=>250))): ?>
+    <div class="item-date">
+        <?php echo "Kirjoitettu: ".$date; ?>
+    </div>
+    <?php endif; ?>
+
     <?php if ($description = metadata('item', array('Dublin Core', 'Description'), array('snippet'=>250))): ?>
     <div class="item-description">
         <?php echo $description; ?>

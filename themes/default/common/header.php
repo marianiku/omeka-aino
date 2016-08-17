@@ -31,7 +31,7 @@
   ?>
 
   <?php
-  ($backgroundColor = get_theme_option('background_color')) || ($backgroundColor = "#FFFFFF");
+  ($backgroundColor = get_theme_option('background_color')) || ($backgroundColor = "#FFFD0");
   ($textColor = get_theme_option('text_color')) || ($textColor = "#444444");
   ($linkColor = get_theme_option('link_color')) || ($linkColor = "#888888");
   ($buttonColor = get_theme_option('button_color')) || ($buttonColor = "#000000");
@@ -54,7 +54,7 @@
     color: <?php echo $linkColor; ?>;
   }
   a:visited {
-    color: <?php echo thanksroy_brighten($linkColor, 40); ?>;
+    color: #444444;
   }
   a:hover, a:active, a:focus {
     color: <?php echo thanksroy_brighten($linkColor, -40); ?>;
@@ -108,13 +108,19 @@
     <img width="200px" style="float:right;margin-right:16px;" src="http://localhost/sks_header_logo.png" />
   </div>
   <div id="search-container" role="search">
-    <span style="width:80%;float:left;margin-right:16px;margin-top:20px;margin-bottom:0;">
-      <?php echo search_form(); ?>
-      <a style="margin-left:5px;font-size:15px;" href="<?php echo html_escape(url('items/search')); ?>"><?php echo __('Laajennettu haku'); ?></a>
-      <a style="margin-left:50px;font-size:18px;" href="<?php echo html_escape(url('items')); ?>"><?php echo __('Kaikki kirjeet'); ?></a>
-      <a style="margin-left:20px;font-size:18px;" href="<?php echo html_escape(url('collections')); ?>">
-<?php echo __('Kokoelmat'); ?></a>
-      <a style="margin-left:40px;font-size:18px;">Ohjeita</a>
+    <span style="width:99%;float:left;margin-right:16px;margin-top:20px;margin-bottom:0;">
+      <a style="margin-left:16px;font-size:18px;" href="<?php echo html_escape(url('items')); ?>">
+         <?php echo __('Kaikki kirjeet'); ?>
+      </a>
+      <a style="margin-left:16px;font-size:18px;" href="<?php echo html_escape(url('collections')); ?>">
+         <?php echo __('Kokoelmat'); ?></a>
+      <a style="margin-left:50px;font-size:18px;">Ohjeita</a>
+      <span style="float:right;">
+      	<a style="font-size:13px;float:left;" href="<?php echo html_escape(url('items/search')); ?>">
+            <?php echo __('Laajennettu haku'); ?>
+      	</a>
+	<?php echo search_form(); ?>
+      </span>
     </span>
     <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
       <?php echo search_form(array('show_advanced' => true)); ?>

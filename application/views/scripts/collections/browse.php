@@ -3,14 +3,15 @@ $pageTitle = __('Vastaanottajakohtaiset kokoelmat');
 echo head(array('title'=>$pageTitle,'bodyclass' => 'collections browse'));
 ?>
 
-<h1><?php echo $pageTitle; ?> <?php echo __('(%s)', $total_results); ?></h1>
+<!--<h1><?php echo $pageTitle; ?> <?php echo __('(%s)', $total_results); ?></h1>-->
 <?php echo pagination_links(); ?>
 
 <?php
-$sortLinks[__('Otsikko')] = 'Dublin Core,Title';
+$sortLinks[__('Nimi')] = 'Dublin Core,Title';
 $sortLinks[__('Lisätty')] = 'added';
 ?>
 <div id="sort-links">
+    <span><?php echo __('(%s kokoelmaa)', $total_results); ?></span>
     <span class="sort-label"><?php echo __('Järjestä: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
 </div>
 

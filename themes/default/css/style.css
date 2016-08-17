@@ -905,7 +905,7 @@ th {
   .search-entry {
     background-color: rgba(0, 0, 0, 0.05);
     padding: 0.75em 2%;
-    margin-bottom: 1.5em;
+    margin-bottom: 0;
     overflow: auto;
     margin-top: 0.75em;
   }
@@ -922,7 +922,7 @@ th {
   #advanced-search-form input, #advanced-search-form select {
     width: 100%;
     display: block;
-    margin-bottom: 1.5em;
+    margin-bottom: 0.5em;
   }
   #advanced-search-form .search-entry select,
   #advanced-search-form .search-entry input[type="text"] {
@@ -944,13 +944,13 @@ th {
     margin-bottom: 0;
   }
   #advanced-search-form #search-narrow-by-fields .inputs {
-    margin-bottom: 1.5em;
+    margin-bottom: 0.5em;
   }
   #advanced-search-form .field {
     border-bottom: 1px solid #ccc;
     width: 100%;
     overflow: auto;
-    padding: 1.5em 0;
+    padding: 1em 0;
     margin-bottom: 0em;
   }
   #advanced-search-form .field .inputs {
@@ -967,9 +967,9 @@ th {
   #advanced-search-form .field div:only-child {
     margin-bottom: 0;
   }
-  #advanced-search-form .field .remove_search {
+  /*#advanced-search-form .field .remove_search {
     margin: 1.5em 0 0;
-  }
+  }*/
 
   ul.items-list, ul.collections-list, ul.title-list {
     list-style: none;
@@ -1479,7 +1479,6 @@ th {
   }
   #sort-links span {
     font-weight: bold;
-    margin-right: 1em;
   }
 
   #sort-links-list {
@@ -2275,14 +2274,28 @@ th {
     float: none;
   }
 
+  #advanced-search-form .field .add_search {
+    width: 20px;
+    height: 20px;
+    padding: 1.5px;
+    text-align: center;
+    line-height: 10px;
+    float: right;
+  }
+
   #advanced-search-form .field .remove_search {
-    text-indent: -9999px;
+    /*text-indent: -9999px;
     margin-top: 0;
     width: 1.875em;
     float: right;
-    clear: none;
+    clear: none;*/
+    width: 20px;
+    height: 20px;
+    padding: 4px;
+    text-align: center;
+    line-height: 10px;
   }
-  #advanced-search-form .field .remove_search:after {
+  /*#advanced-search-form .field .remove_search:after {
     content: "\f00d";
     font-family: "FontAwesome";
     text-indent: 0;
@@ -2292,7 +2305,7 @@ th {
     left: 0;
     position: absolute;
     line-height: 30px;
-  }
+  }*/
 
   /* @end */
   /* @group ----- Exhibit Builder ----- */

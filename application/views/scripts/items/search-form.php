@@ -83,11 +83,11 @@ $formAttributes['method'] = 'GET';
                     )
                 );
                 ?>
-                <button type="button" class="remove_search" disabled="disabled" style="display: none;border-radius: 2px;"><?php echo __('Poista kenttä'); ?></button>
+                <button type="button" class="remove_search" disabled="disabled" style="display: none;" title="Poista hakukenttä"><?php echo __('-'); ?></button>
             </div>
         <?php endforeach; ?>
         </div>
-        <button type="button" class="add_search" style="border-radius: 2px;"><?php echo __('+'); ?></button>
+        <button type="button" class="add_search" style="border-radius: 2px;" title="Lisää hakukenttä"><?php echo __('+'); ?></button>
     </div>
 
     <div id="search-by-range" class="field">
@@ -196,7 +196,7 @@ $formAttributes['method'] = 'GET';
 
     <?php fire_plugin_hook('public_items_search', array('view' => $this)); ?>
     <div>
-        <?php if (!isset($buttonText)) $buttonText = __('Hae kirjeitä'); ?>
+        <?php if (!isset($buttonText)) $buttonText = __('Hae'); ?>
         <input style="border-radius:2px;" type="submit" class="submit" name="submit_search" id="submit_search_advanced" value="<?php echo $buttonText ?>">
     </div>
 </form>
