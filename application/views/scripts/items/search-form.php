@@ -47,7 +47,7 @@ $formAttributes['method'] = 'GET';
                     "advanced[$i][element_id]",
                     @$rows['element_id'],
                     array(
-                        'title' => __("Hakenttä"),
+                        'title' => __("Hakukenttä"),
                         'id' => null,
                         'class' => 'advanced-search-element'
                     ),

@@ -9,7 +9,7 @@ $collectionTitle = strip_formatting(metadata('collection', array('Dublin Core', 
 <?php echo all_element_texts('collection'); ?>
 
 <div id="collection-items">
-    <h2><?php echo link_to_items_browse(__('Items in the %s Collection', $collectionTitle), array('collection' => metadata('collection', 'id'))); ?></h2>
+    <h2><?php echo link_to_items_browse(__('Kirjeet kokoelmassa %s', $collectionTitle), array('collection' => metadata('collection', 'id'))); ?></h2>
     <?php if (metadata('collection', 'total_items') > 0): ?>
         <?php foreach (loop('items') as $item): ?>
         <?php $itemTitle = strip_formatting(metadata('item', array('Dublin Core', 'Title'))); ?>
@@ -34,7 +34,7 @@ $collectionTitle = strip_formatting(metadata('collection', array('Dublin Core', 
         </div>
         <?php endforeach; ?>
     <?php else: ?>
-        <p><?php echo __("There are currently no items within this collection."); ?></p>
+        <p><?php echo __("Kokoelmassa ei ole kirjeitä."); ?></p>
     <?php endif; ?>
 </div><!-- end collection-items -->
 

@@ -112,7 +112,7 @@
       <?php echo search_form(); ?>
       <a style="margin-left:5px;font-size:15px;" href="<?php echo html_escape(url('items/search')); ?>"><?php echo __('Laajennettu haku'); ?></a>
       <a style="margin-left:50px;font-size:18px;" href="<?php echo html_escape(url('items')); ?>"><?php echo __('Kaikki kirjeet'); ?></a>
-      <a style="margin-left:20px;font-size:18px;" href="<?php echo html_escape(url('collections')); ?>">
+      <a style="margin-left:10px;font-size:18px;" href="<?php echo html_escape(url('collections')); ?>">
 <?php echo __('Kokoelmat'); ?></a>
       <a style="margin-left:40px;font-size:18px;">Ohjeita</a>
     </span>

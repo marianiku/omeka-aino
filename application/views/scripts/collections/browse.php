@@ -1,17 +1,17 @@
 <?php
-$pageTitle = __('Browse Collections');
+$pageTitle = __('Vastaanottajakohtaiset kokoelmat');
 echo head(array('title'=>$pageTitle,'bodyclass' => 'collections browse'));
 ?>
 
-<h1><?php echo $pageTitle; ?> <?php echo __('(%s total)', $total_results); ?></h1>
+<h1><?php echo $pageTitle; ?> <?php echo __('(%s)', $total_results); ?></h1>
 <?php echo pagination_links(); ?>
 
 <?php
-$sortLinks[__('Title')] = 'Dublin Core,Title';
-$sortLinks[__('Date Added')] = 'added';
+$sortLinks[__('Otsikko')] = 'Dublin Core,Title';
+$sortLinks[__('Lisätty')] = 'added';
 ?>
 <div id="sort-links">
-    <span class="sort-label"><?php echo __('Sort by: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
+    <span class="sort-label"><?php echo __('Järjestä: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
 </div>
 
 <?php foreach (loop('collections') as $collection): ?>
@@ -39,7 +39,7 @@ $sortLinks[__('Date Added')] = 'added';
     </div>
     <?php endif; ?>
 
-    <p class="view-items-link"><?php echo link_to_items_browse(__('View the items in %s', metadata('collection', array('Dublin Core', 'Title'))), array('collection' => metadata('collection', 'id'))); ?></p>
+    <p class="view-items-link"><?php echo link_to_items_browse(__('Kokoelman kirjeet', metadata('collection', array('Dublin Core', 'Title'))), array('collection' => metadata('collection', 'id'))); ?></p>
 
     <?php fire_plugin_hook('public_collections_browse_each', array('view' => $this, 'collection' => $collection)); ?>
 

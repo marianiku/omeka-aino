@@ -14,7 +14,7 @@
 <?php echo head(array('title' => __('Solr-haku')));?>
 
 
-<h1><?php echo __('Hae kirjeitä'); ?></h1>
+<h2><?php echo __('Hakusanat'); ?></h2>
 
 
 <!-- Search form. -->
