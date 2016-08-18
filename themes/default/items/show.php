@@ -6,13 +6,10 @@ queue_js_file('comments');
 queue_js_file('page-formatting-xhtml');
 queue_js_file('togglesHTML');
 queue_js_file('toggles-xhtml');
-queue_js_file('btEventsHTML');
 queue_js_file('uv-image-viewer-xhtml');
 queue_js_file('jquery-image-viewer-xhtml');
 
 echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'bodyclass' => 'item show')); ?>
-
-<!-- transform TEI-documents -->
 
 <h1><?php echo metadata('item', array('Dublin Core', 'Title')); ?>
   <span style="float:right;">
@@ -27,33 +24,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'body
   </span>
 </h1>
 
-<h2 style="font-weight:bold;">1. transkriptio text-metadatakentästä, skrollattavassa divissä</h2>
-<div class="exhibit1">
-  <div class="exhibit1a">
-    <?php
-    echo get_specific_plugin_hook_output('UniversalViewer', 'public_items_show', array(
-      'view' => $this,
-      'record' => $item,
-    ));
-    ?>
-  </div>
-
-  <span style="display:inline;">
-    <input type="checkbox" onclick="toggleMarkingsHTML()" checked/>Merkinnät&nbsp;&nbsp;
-    <input type="checkbox" onclick="toggleCommentsHTML()" checked/>Kommentit
-  </span>
-  <span style="float:right;">
-    <a class="btPrevHTML" style="cursor:pointer;font-size:20px;">&#8592;</a>
-    <a class="btNextHTML" style="cursor:pointer;font-size:20px;">&#8594;</a>
-  </span>
-  <div class="exhibit1b">
-    <?php
-    echo metadata('item', array('Item Type Metadata', 'Text'));
-    ?>
-  </div>
-</div>
-
-<h2 style="font-weight:bold;">2. UV-plugin, PHP-käännetty XML-transkriptio</h2>
+<h2 style="font-weight:bold;">1. UV-plugin, PHP-käännetty XML-transkriptio</h2>
 <div id="exhibit3">
   <div id="exhibit3a">
     <?php
@@ -91,7 +62,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'body
   </div>
 </div>
 
-<h2 style="font-weight:bold;">3. Käsin rakennettu viewer (jquery + lisäosia) + PHP-käännetty XML-transkriptio</h2>
+<h2 style="font-weight:bold;">2. Käsin rakennettu viewer (jquery + lisäosia) + PHP-käännetty XML-transkriptio</h2>
 <div id="exhibit2">
   <div id="exhibit2a">
     <div id="picframe">
