@@ -13,16 +13,44 @@ $formAttributes['method'] = 'GET';
         <div class="label"><?php echo __('Valitse hakukenttä'); ?></div>
         <div class="inputs">
         <?php
-        // If the form has been submitted, retain the number of search
-        // fields used and rebuild the form
         if (!empty($_GET['advanced'])) {
             $search = $_GET['advanced'];
         } else {
             $search = array(array('field'=>'','type'=>'','value'=>''));
         }
 
-        //Here is where we actually build the search form
         foreach ($search as $i => $rows): ?>
+            <?php
+
+              // Suomenkieliset hakukentät, turhat kentät pois
+              $table_options = get_table_options('Element', null, array(
+                  'element_set_name' => 'Dublin Core',
+                  'sort' => 'orderBySet'));
+
+              $table_options = str_replace('Select Below', 'Valitse hakukenttä', $table_options);
+              $table_options = str_replace('Title', 'Otsikko', $table_options);
+              $table_options = str_replace('Subject', 'Aihe', $table_options);
+              $table_options = str_replace('Description', 'Kuvaus', $table_options);
+              $table_options = str_replace('Date', 'Päivämäärä', $table_options);
+              $table_options = str_replace('Creator', 'Kirjoittaja', $table_options);
+              $table_options = str_replace('Language', 'Kieli', $table_options);
+              $table_options = str_replace('Identifier', 'Tunniste', $table_options);
+              $table_options = str_replace('Relation', 'Kokonaisuus', $table_options);
+
+              $table_options = array_diff($table_options,
+                ['Coverage', 'Type', 'Format', 'Publisher', 'Rights', 'Contributor', 'Source']);
+
+              $label_table_options = label_table_options(array(
+                  'contains' => __('sisältää'),
+                  'does not contain' => __('ei sisällä'),
+                  'is exactly' => __('on täsmälleen'),
+                  'is empty' => __('on tyhjä'),
+                  'is not empty' => __('ei ole tyhjä'))
+              );
+
+              $label_table_options = str_replace('Select Below', 'Valitse hakutyyppi', $label_table_options);
+            ?>
+
             <div class="search-entry">
                 <?php
                 echo $this->formSelect(
@@ -33,10 +61,7 @@ $formAttributes['method'] = 'GET';
                         'id' => null,
                         'class' => 'advanced-search-element'
                     ),
-                    get_table_options('Element', null, array(
-                        'record_types' => array('Item', 'All'),
-                        'sort' => 'orderBySet')
-                    )
+                    @$table_options
                 );
                 echo $this->formSelect(
                     "advanced[$i][type]",
@@ -46,13 +71,7 @@ $formAttributes['method'] = 'GET';
                         'id' => null,
                         'class' => 'advanced-search-type'
                     ),
-                    label_table_options(array(
-                        'contains' => __('sisältää'),
-                        'does not contain' => __('ei sisällä'),
-                        'is exactly' => __('on täsmälleen'),
-                        'is empty' => __('on tyhjä'),
-                        'is not empty' => __('ei ole tyhjä'))
-                    )
+                    @$label_table_options
                 );
                 echo $this->formText(
                     "advanced[$i][terms]",
