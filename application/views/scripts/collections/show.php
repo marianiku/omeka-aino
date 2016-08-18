@@ -21,13 +21,18 @@ $collectionTitle = strip_formatting(metadata('collection', array('Dublin Core', 
                 <?php echo link_to_item(item_image('square_thumbnail', array('alt' => $itemTitle))); ?>
             </div>
             <?php endif; ?>
-
+            <div class="item-date">
+            </div>
             <?php if ($text = metadata('item', array('Item Type Metadata', 'Text'), array('snippet'=>250))): ?>
             <div class="item-description">
-                <p><?php echo $text; ?></p>
+                <p>
+                  <?php echo "Kirjoitusaika: ".metadata('item', array('Dublin Core', 'Date')); ?><br />
+                  <?php echo $text; ?>
+                </p>
             </div>
             <?php elseif ($description = metadata('item', array('Dublin Core', 'Description'), array('snippet'=>250))): ?>
             <div class="item-description">
+                <?php echo "Kirjoitusaika: ".metadata('item', array('Dublin Core', 'Date')); ?><br /> 
                 <?php echo $description; ?>
             </div>
             <?php endif; ?>

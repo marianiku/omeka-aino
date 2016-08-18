@@ -572,7 +572,7 @@ th {
   .columns.alpha,
   .field label,
   .field .label {
-    font-weight: bold;
+    font-weight: normal;
   }
 
   /* @end */
@@ -904,10 +904,10 @@ th {
 
   .search-entry {
     background-color: rgba(0, 0, 0, 0.05);
-    padding: 0.75em 2%;
+    padding: 0.25em;
     margin-bottom: 0;
     overflow: auto;
-    margin-top: 0.75em;
+    margin-top: 0.25em;
   }
 
   .remove_search {
@@ -922,7 +922,7 @@ th {
   #advanced-search-form input, #advanced-search-form select {
     width: 100%;
     display: block;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.2em;
   }
   #advanced-search-form .search-entry select,
   #advanced-search-form .search-entry input[type="text"] {
@@ -958,7 +958,7 @@ th {
   }
   #advanced-search-form .field label {
     margin: 0;
-    margin-bottom: 1.5em;
+    margin-bottom: 0em;
   }
   #advanced-search-form .field div.field:last-of-type {
     display: inline-block;
@@ -1689,8 +1689,10 @@ th {
   }
 
   #submit_search_advanced {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    height: 25px;
+    width: 35px !important;
+    font-size: 14px !important;
+    padding: 1px;
   }
 
   #search-filters ul, #item-filters ul {
@@ -2256,24 +2258,30 @@ th {
   /* @end */
   /* @group ----- Advanced Search Form ----- */
   #advanced-search-form {
-    margin-bottom: 40px;
-    width: 40%;
+    position: absolute;
+    right: 17%;
+    top: 17%;
+    width: 25%;
     border: solid 0.5px;
-    border-radius: 5px;
-    padding: 1em;
-    float: left;
+    border-radius: 2px;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1em;
     margin-right: 20px;
+    background-color: #e9e3f9;
+    z-index: 9999;
   }
+
   #advanced-search-form .submit {
     float: right;
   }
 
   #advanced-search-form .search-entry input[type=text],
   #advanced-search-form .search-entry select {
-    width: calc((100% - 2.625em) / 3);
-    display: inline-block;
-    margin: 0 3px 0 0;
+    width: 100%;
+    margin-bottom: 5px;
     float: none;
+    font-size: 14px;
   }
 
   #advanced-search-form .field .add_search {

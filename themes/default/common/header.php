@@ -121,16 +121,13 @@
         </a>
         <a style="margin-left:50px;font-size:18px;">Ohjeita</a>
         <span style="float:right;">
-          <a style="font-size:13px;float:left;" href="<?php echo html_escape(url('items/search')); ?>">
+          <!--<a style="font-size:13px;float:left;" href="<?php echo html_escape(url('items/search')); ?>">
             <?php echo __('Laajennettu haku'); ?>
-          </a>
+          </a>-->
+          <a id="searchbtn" style="font-size:13px;float:left;cursor:pointer;"><?php echo __('Laajennettu haku'); ?></a>
           <?php echo search_form(); ?>
         </span>
       </span>
-      <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
-        <?php echo search_form(array('show_advanced' => true)); ?>
-      <?php else: ?>
-      <?php endif; ?>
     </div>
     <div id="collections-list">
        <ul>
@@ -142,6 +139,11 @@
               <li><?php echo link_to_collection(); ?></li>
           <?php endforeach; ?>
        </ul>
+    </div>
+    <div id="ext-search" style="display: none;">
+      <?php echo $this->partial('items/search-form.php',
+          array('formAttributes' =>
+              array('id'=>'advanced-search-form'))); ?>
     </div>
   </header>
 
