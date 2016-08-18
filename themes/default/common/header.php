@@ -94,6 +94,8 @@
   queue_js_file('vendor/jquery-accessibleMegaMenu');
   queue_js_file('globals');
   queue_js_file('default');
+  queue_js_file('jquery-1.12.4.min');
+  queue_js_file('coll-menu');
   echo head_js();
   ?>
 </head>
@@ -110,35 +112,49 @@
   <div id="search-container" role="search">
     <span style="width:99%;float:left;margin-right:16px;margin-top:20px;margin-bottom:0;">
       <a style="margin-left:16px;font-size:18px;" href="<?php echo html_escape(url('items')); ?>">
-         <?php echo __('Kaikki kirjeet'); ?>
+        <?php echo __('Kaikki kirjeet'); ?>
       </a>
       <a style="margin-left:16px;font-size:18px;" href="<?php echo html_escape(url('collections')); ?>">
-         <?php echo __('Kokoelmat'); ?></a>
-      <a style="margin-left:50px;font-size:18px;">Ohjeita</a>
-      <span style="float:right;">
-      	<a style="font-size:13px;float:left;" href="<?php echo html_escape(url('items/search')); ?>">
+        <?php echo __('Kokoelmat'); ?></a>
+        <a id="collbtn" style="margin-left:16px;font-size:18px;cursor:pointer;">
+          <?php echo __('Kokoelmat (vaihtoeht.)'); ?>
+        </a>
+        <a style="margin-left:50px;font-size:18px;">Ohjeita</a>
+        <span style="float:right;">
+          <a style="font-size:13px;float:left;" href="<?php echo html_escape(url('items/search')); ?>">
             <?php echo __('Laajennettu haku'); ?>
-      	</a>
-	<?php echo search_form(); ?>
+          </a>
+          <?php echo search_form(); ?>
+        </span>
       </span>
-    </span>
+      <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
+        <?php echo search_form(array('show_advanced' => true)); ?>
+      <?php else: ?>
+      <?php endif; ?>
+    </div>
+    <div id="collections-list">
+       <ul>
+         <?php
+            $collections = get_records('Collection');
+            set_loop_records('collections', $collections);
+          ?>
+          <?php foreach (loop('collections') as $collection): ?>
+              <li><?php echo link_to_collection(); ?></li>
+          <?php endforeach; ?>
+       </ul>
+    </div>
+  </header>
+
+  <div class="menu-button button">Menu</div>
+
+  <div id="wrap">
+    <!--<nav id="primary-nav" role="navigation">
+    <?php echo public_nav_main(array('role' => 'navigation')); ?>
+    <div id="search-container" role="search">
     <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
-      <?php echo search_form(array('show_advanced' => true)); ?>
-    <?php else: ?>
-    <?php endif; ?>
-  </div>
-</header>
-
-<div class="menu-button button">Menu</div>
-
-<div id="wrap">
-  <!--<nav id="primary-nav" role="navigation">
-  <?php echo public_nav_main(array('role' => 'navigation')); ?>
-  <div id="search-container" role="search">
-  <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
-  <?php echo search_form(array('show_advanced' => true)); ?>
-<?php else: ?>
-<?php echo search_form(); ?>
+    <?php echo search_form(array('show_advanced' => true)); ?>
+  <?php else: ?>
+  <?php echo search_form(); ?>
 <?php endif; ?>
 </div>
 </nav>-->
