@@ -107,7 +107,9 @@
   <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
   <div id="site-title" style="width:98%;height:10%;">
     <?php echo link_to_home_page(); ?>
-    <img width="200px" style="float:right;margin-right:16px;" src="http://localhost/sks_header_logo.png" />
+     <a href="http://www.finlit.fi" target="_blank">
+      <img width="200px" style="float:right;margin-right:16px;" src="http://localhost/sks_header_logo.png" />
+    </a>
   </div>
   <div id="search-container" role="search">
     <span style="width:99%;float:left;margin-right:16px;margin-top:20px;margin-bottom:0;">

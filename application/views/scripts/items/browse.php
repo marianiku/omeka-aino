@@ -38,7 +38,7 @@ $sortLinks[__('Lisätty')] = 'added';
 
     <?php if ($date = metadata('item', array('Dublin Core', 'Date'), array('snippet'=>250))): ?>
     <div class="item-date">
-        <?php echo "Kirjoitettu: ".$date; ?>
+        <?php echo "Kirjoitusaika: ".$date; ?>
     </div>
     <?php endif; ?>
 
@@ -63,7 +63,7 @@ $sortLinks[__('Lisätty')] = 'added';
 <?php echo pagination_links(); ?>
 
 <div id="outputs">
-    <span class="outputs-label"><?php echo __('Output Formats'); ?></span>
+    <span class="outputs-label"><?php echo __('Formaatit:'); ?></span>
     <?php echo output_format_list(false); ?>
 </div>
 
