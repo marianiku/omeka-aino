@@ -22,23 +22,15 @@ $formAttributes['method'] = 'GET';
         foreach ($search as $i => $rows): ?>
             <?php
 
-              // Suomenkieliset hakukentät, turhat kentät pois
+              // Poistetaan turhat hakukentät
               $table_options = get_table_options('Element', null, array(
                   'element_set_name' => 'Dublin Core',
                   'sort' => 'orderBySet'));
 
-              $table_options = str_replace('Select Below', 'Valitse hakukenttä', $table_options);
-              $table_options = str_replace('Title', 'Otsikko', $table_options);
-              $table_options = str_replace('Subject', 'Aihe', $table_options);
-              $table_options = str_replace('Description', 'Kuvaus', $table_options);
-              $table_options = str_replace('Date', 'Päivämäärä', $table_options);
-              $table_options = str_replace('Creator', 'Kirjoittaja', $table_options);
-              $table_options = str_replace('Language', 'Kieli', $table_options);
-              $table_options = str_replace('Identifier', 'Tunniste', $table_options);
-              $table_options = str_replace('Relation', 'Kokonaisuus', $table_options);
-
               $table_options = array_diff($table_options,
-                ['Coverage', 'Type', 'Format', 'Publisher', 'Rights', 'Contributor', 'Source']);
+                ['Kattavuus', 'Laji', 'Formaatti', 'Julkaisija', 'Oikeudet', 'Muu tekijä', 'Lähde']);
+
+              $table_options = str_replace('Valitse', 'Valitse hakukenttä', $table_options);
 
               $label_table_options = label_table_options(array(
                   'contains' => __('sisältää'),
@@ -48,7 +40,7 @@ $formAttributes['method'] = 'GET';
                   'is not empty' => __('ei ole tyhjä'))
               );
 
-              $label_table_options = str_replace('Select Below', 'Valitse hakutyyppi', $label_table_options);
+              $label_table_options = str_replace('Valitse', 'Valitse hakutapa', $label_table_options);
             ?>
 
             <div class="search-entry">
