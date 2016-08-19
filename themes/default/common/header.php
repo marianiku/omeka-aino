@@ -138,7 +138,14 @@
             set_loop_records('collections', $collections);
           ?>
           <?php foreach (loop('collections') as $collection): ?>
-              <li><?php echo link_to_collection(); ?></li>
+              <li style="clear:both;">
+                <span style="float:left;">
+                  <?php if ($collectionImage = record_image('collection', 'square_thumbnail')): ?>
+                      <?php echo link_to_collection($collectionImage, array('class' => 'image')); ?>
+                  <?php endif; ?>
+                </span>
+                <span style="float:left;"><?php echo link_to_collection(); ?></span>
+              </li>
           <?php endforeach; ?>
        </ul>
     </div>
