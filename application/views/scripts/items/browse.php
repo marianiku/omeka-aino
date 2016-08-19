@@ -26,8 +26,9 @@ $sortLinks[__('Lisätty')] = 'added';
 
 <?php endif; ?>
 
-<?php foreach (loop('items') as $item): ?>
-<div class="item hentry">
+<div id="item-main-list">
+  <?php foreach (loop('items') as $item): ?>
+  <div class="item hentry">
     <h2><?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class'=>'permalink')); ?></h2>
     <div class="item-meta">
     <?php if (metadata('item', 'has files')): ?>
@@ -57,8 +58,9 @@ $sortLinks[__('Lisätty')] = 'added';
     <?php fire_plugin_hook('public_items_browse_each', array('view' => $this, 'item' =>$item)); ?>
 
     </div><!-- end class="item-meta" -->
-</div><!-- end class="item hentry" -->
-<?php endforeach; ?>
+  </div><!-- end class="item hentry" -->
+  <?php endforeach; ?>
+</div>
 
 <?php echo pagination_links(); ?>
 

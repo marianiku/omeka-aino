@@ -95,7 +95,7 @@
   queue_js_file('globals');
   queue_js_file('default');
   queue_js_file('jquery-1.12.4.min');
-  queue_js_file('coll-menu');
+  queue_js_file('header_menus');
   echo head_js();
   ?>
 </head>
