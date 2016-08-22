@@ -1607,11 +1607,12 @@ th {
   }
 
   #search-container input[type=text], #search-container .button {
-    height: 25px;
+    height: 27px;
     font-size: 14px;
     line-height: 20px;
     *zoom: 2;
     border-radius: 2px;
+    padding: 0;
   }
 
   #search-container button {
@@ -2033,7 +2034,7 @@ th {
     color: #fff;
   }
   a:hover {
-    color: #777;
+    color: #888888 !important;
   }
   a:active {
     color: #777;
@@ -2115,7 +2116,7 @@ th {
     /*border-style: solid;*/
     background-color: #dfc1c1;
     width: 100%;
-    height: 7.1em;
+    height: 7.3em;
   }
 
   .menu-button {
@@ -2138,11 +2139,12 @@ th {
 
   #search-form {
     float:left;
-    margin-left: 1.5em;
+    margin-left: 0.5em;
   }
 
   #query {
     margin-bottom: 1.5em;
+    height: 25px;
   }
 
   .secondary-nav, #secondary-nav {
@@ -2591,34 +2593,6 @@ th {
     float: right;
   }
 
-  #collections-list {
-    display: none;
-    z-index: 9999;
-    position: absolute;
-    top: 17%;
-    left: 18%;
-    border-radius: 2px;
-    border: 0.5px solid;
-    background-color: #e9e3f9;
-    width: auto;
-    overflow: auto;
-  }
-
-  #collections-list ul {
-    list-style-type: none;
-    padding: 10px;
-    margin: 2px;
-  }
-
-  #collections-list ul li {
-    font-size: 16px;
-    line-height: 35px;
-  }
-
-  #collections-list ul li a {
-    border-bottom: none;
-  }
-
   #item-main-list {
     width: 100%;
     height: 650px;
@@ -2628,6 +2602,13 @@ th {
     padding-bottom: 1em;
     border: 0.5px solid;
     border-radius: 5px;
+  }
+
+  #searchbtn {
+    font-size: 18px !important;
+    float: left;
+    cursor: pointer;
+    padding-right: 1em;
   }
   .
 

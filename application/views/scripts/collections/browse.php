@@ -1,5 +1,5 @@
 <?php
-$pageTitle = __('Vastaanottajakohtaiset kokoelmat');
+$pageTitle = __('Kirjeiden vastaanottajat');
 echo head(array('title'=>$pageTitle,'bodyclass' => 'collections browse'));
 ?>
 

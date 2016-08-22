@@ -29,7 +29,7 @@ $sortLinks[__('Lisätty')] = 'added';
 <div id="item-main-list">
   <?php foreach (loop('items') as $item): ?>
   <div class="item hentry">
-    <h2><?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class'=>'permalink')); ?></h2>
+    <p><?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class'=>'permalink')); ?></p>
     <div class="item-meta">
     <?php if (metadata('item', 'has files')): ?>
     <div class="item-img">

@@ -53,13 +53,13 @@
   a:link {
     color: <?php echo $linkColor; ?>;
   }
-  a:visited {
-    color: #888888;
-  }
+
   a:hover, a:focus {
-    color: #888888;
-    border-radius: 2px;
-    padding: 2px;
+    color: #888888 !important;
+  }
+
+  a:visited {
+    color: #444444 !important;
   }
 
   .button, button,
@@ -119,37 +119,14 @@
         <?php echo __('Kaikki kirjeet'); ?>
       </a>
       <a style="margin-left:16px;font-size:18px;" href="<?php echo html_escape(url('collections')); ?>">
-        <?php echo __('Kokoelmat'); ?></a>
-        <a id="collbtn" style="margin-left:16px;font-size:18px;cursor:pointer;">
-          <?php echo __('Kokoelmat (vaihtoeht.)'); ?>
-        </a>
-        <a style="margin-left:50px;font-size:18px;">Ohjeita</a>
+        <?php echo __('Kirjeiden vastaanottajat'); ?></a>
+        <a style="margin-left:50px;font-size:18px">Esipuhe</a>
+        <a style="margin-left:16px;font-size:18px;">Ohjeita</a>
         <span style="float:right;">
-          <!--<a style="font-size:13px;float:left;" href="<?php echo html_escape(url('items/search')); ?>">
-            <?php echo __('Laajennettu haku'); ?>
-          </a>-->
-          <a id="searchbtn" style="font-size:13px;float:left;cursor:pointer;"><?php echo __('Laajennettu haku'); ?></a>
+          <a id="searchbtn"><?php echo __('Laajennettu haku'); ?></a>
           <?php echo search_form(); ?>
         </span>
       </span>
-    </div>
-    <div id="collections-list">
-       <ul>
-         <?php
-            $collections = get_records('Collection');
-            set_loop_records('collections', $collections);
-          ?>
-          <?php foreach (loop('collections') as $collection): ?>
-              <li style="clear:both;">
-                <span style="float:left;">
-                  <?php if ($collectionImage = record_image('collection', 'square_thumbnail')): ?>
-                      <?php echo link_to_collection($collectionImage, array('class' => 'image')); ?>
-                  <?php endif; ?>
-                </span>
-                <span style="float:left;"><?php echo link_to_collection(); ?></span>
-              </li>
-          <?php endforeach; ?>
-       </ul>
     </div>
     <div id="ext-search" style="display: none;">
       <?php echo $this->partial('items/search-form.php',

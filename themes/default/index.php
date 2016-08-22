@@ -38,7 +38,6 @@
     <div id="recent-items">
       <h2><?php echo __('Viimeksi lisätyt kirjeet'); ?></h2>
       <?php echo recent_items($recentItems); ?>
-      <!--<p class="view-items-link"><a href="<?php echo html_escape(url('items')); ?>"><?php echo __('View All Items'); ?></a></p>-->
     </div><!--end recent-items -->
   <?php endif; ?>
 

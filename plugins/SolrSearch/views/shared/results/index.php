@@ -24,7 +24,7 @@
     <span class="float-wrap">
       <input type="text" title="<?php echo __('Hae hakusanoilla') ?>" name="q" value="<?php
         echo array_key_exists('q', $_GET) ? $_GET['q'] : '';
-      ?>" />
+      ?>" placeholder="Hae kirjeitä"/>
     </span>
   </form>
 </div>
