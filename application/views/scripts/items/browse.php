@@ -16,9 +16,10 @@ echo head(array('title'=>$pageTitle,'bodyclass' => 'items browse'));
 <?php if ($total_results > 0): ?>
 
 <?php
+
+$sortLinks[__('Kirjoitusaika')] = 'Dublin Core,Date';
 $sortLinks[__('Otsikko')] = 'Dublin Core,Title';
 $sortLinks[__('Kirjoittaja')] = 'Dublin Core,Creator';
-$sortLinks[__('Lisätty')] = 'added';
 ?>
 <div id="sort-links">
     <span class="sort-label"><?php echo __('Järjestä: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
@@ -39,7 +40,8 @@ $sortLinks[__('Lisätty')] = 'added';
 
     <?php if ($date = metadata('item', array('Dublin Core', 'Date'), array('snippet'=>250))): ?>
     <div class="item-date">
-        <?php echo "Kirjoitusaika: ".$date; ?>
+        <?php
+          echo "Kirjoitusaika: ".date('j.n.Y', strtotime($date)); ?>
     </div>
     <?php endif; ?>
 

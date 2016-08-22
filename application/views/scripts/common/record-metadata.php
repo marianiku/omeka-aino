@@ -11,12 +11,14 @@
 
     <div id="<?php echo text_to_id(html_escape("$setName $elementName")); ?>" class="element">
         <span id="elementTitle"><?php echo html_escape(__($elementName)); ?></span><br />
-        <?php foreach ($elementInfo['texts'] as $text):
+        <?php foreach ($elementInfo['texts'] as $text): ?>
+
+          <?php
            if ($elementName == 'XML-tiedosto' || strpos($elementName, 'Kuva') !== false) {
 		           $text = str_replace('http://localhost/uploads/', '', $text);
-              }
-	?>
-            <div class="element-text"><?php echo $text; ?></div>
+           }
+	        ?>
+          <div class="element-text"><?php echo $text; ?></div>
         <?php endforeach; ?>
     </div><!-- end element -->
     <?php endforeach; ?>

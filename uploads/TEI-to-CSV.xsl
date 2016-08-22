@@ -21,7 +21,7 @@
         <xsl:text>","</xsl:text>
         <xsl:text>Suomalaisen Kirjallisuuden Seuran kirjallisuusarkisto","</xsl:text>
         <xsl:text>SKS","</xsl:text>
-        <xsl:value-of select="//tei:opener/tei:dateline/tei:date" /><xsl:text>","</xsl:text>
+        <xsl:value-of select="//tei:opener/tei:dateline/tei:date/@when" /><xsl:text>","</xsl:text>
         <xsl:text>SKS","</xsl:text>
         <xsl:text>SKS","</xsl:text>
         <xsl:value-of select="//tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:idno" /><xsl:text>","</xsl:text>
