@@ -54,10 +54,12 @@
     color: <?php echo $linkColor; ?>;
   }
   a:visited {
-    color: #444444;
+    color: #888888;
   }
-  a:hover, a:active, a:focus {
-    color: <?php echo thanksroy_brighten($linkColor, -40); ?>;
+  a:hover, a:focus {
+    color: #888888;
+    border-radius: 2px;
+    padding: 2px;
   }
 
   .button, button,
