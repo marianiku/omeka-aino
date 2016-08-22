@@ -80,5 +80,9 @@
         <xsl:apply-templates/>
       </td>
     </xsl:template>
-    
+
+    <xsl:template match="tei:gap">
+      <span style="background-color:grey;color:grey;"><xsl:text>gap</xsl:text></span>
+    </xsl:template>
+
   </xsl:stylesheet>
