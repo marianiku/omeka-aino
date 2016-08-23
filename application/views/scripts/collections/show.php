@@ -20,7 +20,6 @@ $sortLinks[__('Otsikko')] = 'Dublin Core,Title';
 </div>
 
 <div id="collection-items">
-    <!--<h2><?php echo link_to_items_browse(__('Kirjeet kokoelmassa %s', $collectionTitle), array('collection' => metadata('collection', 'id'))); ?></h2>-->
     <?php if (metadata('collection', 'total_items') > 0): ?>
         <?php foreach (loop('items') as $item): ?>
         <?php $itemTitle = strip_formatting(metadata('item', array('Dublin Core', 'Title'))); ?>
@@ -37,7 +36,6 @@ $sortLinks[__('Otsikko')] = 'Dublin Core,Title';
             <?php if ($text = metadata('item', array('Item Type Metadata', 'Text'), array('snippet'=>250))): ?>
             <div class="item-description">
                 <p>
-                  <?php echo "Kirjoitusaika: ".date('j.n.Y', strtotime(metadata('item', array('Dublin Core', 'Date')))); ?><br />
                   <?php echo $text; ?>
                 </p>
             </div>

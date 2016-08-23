@@ -6,7 +6,7 @@
 
 <xsl:output method="text" omit-xml-declaration="yes" indent="no"/>
 <xsl:template match="/">
-    <xsl:text>"Title","Description","Creator","Source","Publisher","Date","Contributor","Rights","Relation","Identifier","XML","Image 1","Image 2","Image 3","Image 4","Image 5","Image 6","Image 7","Image 8"&#10;</xsl:text>
+    <xsl:text>"Title","Description","Creator","Source","Publisher","Date","Contributor","Rights","Relation","Identifier","Language","XML","Image 1","Image 2","Image 3","Image 4","Image 5","Image 6","Image 7","Image 8"&#10;</xsl:text>
     <xsl:variable name="teiFiles" select="collection('./?select=*.xml')"/>
     <xsl:for-each select="$teiFiles">
         <xsl:text>"</xsl:text>
@@ -25,6 +25,8 @@
         <xsl:text>SKS","</xsl:text>
         <xsl:text>SKS","</xsl:text>
         <xsl:value-of select="//tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:idno" /><xsl:text>","</xsl:text>
+        <xsl:value-of select="//tei:bibl" /><xsl:text>","</xsl:text>
+        <xsl:value-of select="//tei:profileDesc/tei:langUsage/tei:language" /><xsl:text>","</xsl:text>
         <xsl:value-of select="//tei:bibl" /><xsl:text>","</xsl:text>
         <xsl:text>http://localhost/uploads/</xsl:text><xsl:value-of select="tokenize(base-uri(), '/')[last()]" /><xsl:text>",</xsl:text>
         <xsl:for-each select="distinct-values(//tei:pb/@facs)">

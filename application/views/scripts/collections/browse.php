@@ -3,7 +3,6 @@ $pageTitle = __('Kirjeiden vastaanottajat');
 echo head(array('title'=>$pageTitle,'bodyclass' => 'collections browse'));
 ?>
 
-<!--<h1><?php echo $pageTitle; ?> <?php echo __('(%s)', $total_results); ?></h1>-->
 <?php echo pagination_links(); ?>
 
 <?php

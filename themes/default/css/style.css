@@ -1479,6 +1479,12 @@ th {
     float:right;
   }
 
+  #sort-collection-list {
+    list-style: none;
+    display: inline-block;
+    padding-left: 0;
+  }
+  
   #sort-links {
     font-size: 0.875em;
     line-height: 1.71429em;
