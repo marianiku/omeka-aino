@@ -85,7 +85,11 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'body
       endforeach; ?>
     </div>
     <div id="infopanel">
-      <?php echo all_element_texts('item');
+      <?php
+      $texts = all_element_texts('item');
+      $texts = str_replace('Nimeke', 'Otsikko', $texts);
+      $texts = str_replace('Aikamääre', 'Kirjoitusaika', $texts);
+      echo $texts;
       ?>
     </div>
   </div>

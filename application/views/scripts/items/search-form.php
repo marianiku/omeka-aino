@@ -31,7 +31,7 @@ $formAttributes['method'] = 'GET';
                 ['Kattavuus', 'Laji', 'Formaatti', 'Julkaisija', 'Oikeudet', 'Muu tekijä', 'Lähde']);
 
               $table_options = str_replace('Valitse', 'Valitse hakukenttä', $table_options);
-              $table_options = str_replace('Aikamääre', 'Kirjoituspäivä', $table_options);
+              $table_options = str_replace('Aikamääre', 'Kirjoitusvuosi', $table_options);
               $table_options = str_replace('Tekijä', 'Kirjoittaja', $table_options);
               $table_options = str_replace('Nimeke', 'Otsikko', $table_options);
 

@@ -6,18 +6,9 @@ $collectionTitle = strip_formatting(metadata('collection', array('Dublin Core', 
 
 <h1><?php echo $collectionTitle; ?></h1>
 
-<?php echo all_element_texts('collection'); ?>
+<p><?php echo metadata('collection', array('Dublin Core', 'Description')); ?></p>
 
 <?php echo pagination_links(); ?>
-
-<?php
-$sortLinks[__('Kirjoitusaika')] = 'Dublin Core,Date';
-$sortLinks[__('Otsikko')] = 'Dublin Core,Title';
-?>
-
-<div id="sort-collection-letters">
-    <span class="sort-label"><?php echo __('Järjestä: '); ?></span><?php echo browse_sort_links($sortLinks); ?>
-</div>
 
 <div id="collection-items">
     <?php if (metadata('collection', 'total_items') > 0): ?>
@@ -32,6 +23,9 @@ $sortLinks[__('Otsikko')] = 'Dublin Core,Title';
             </div>
             <?php endif; ?>
             <div class="item-date">
+              <?php
+              $date = metadata('item', array('Dublin Core', 'Date'));
+              echo "Kirjoitusaika: ".date('j.n.Y', strtotime($date)); ?>
             </div>
             <?php if ($text = metadata('item', array('Item Type Metadata', 'Text'), array('snippet'=>250))): ?>
             <div class="item-description">
@@ -41,9 +35,6 @@ $sortLinks[__('Otsikko')] = 'Dublin Core,Title';
             </div>
             <?php elseif ($description = metadata('item', array('Dublin Core', 'Description'), array('snippet'=>250))): ?>
             <div class="item-description">
-                <?php
-                $date = metadata('item', array('Dublin Core', 'Date'));
-                echo "Kirjoitusaika: ".date('j.n.Y', strtotime($date)); ?><br />
                 <?php echo $description; ?>
             </div>
             <?php endif; ?>

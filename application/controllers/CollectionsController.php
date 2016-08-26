@@ -45,8 +45,9 @@ class CollectionsController extends Omeka_Controller_AbstractActionController
 
         parent::showAction();
         $this->view->items = $this->_helper->db->getTable('Item')->findBy(
-            array('collection' => $this->view->collection->id), $this->_getBrowseRecordsPerPage());
-          
+            array('collection' => $this->view->collection->id,
+                  'sort_field' => 'Dublin Core,Date',
+                  'sort_dir' => 'a'), $this->_getBrowseRecordsPerPage());
     }
 
     /**
