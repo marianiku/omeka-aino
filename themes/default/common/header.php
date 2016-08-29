@@ -120,8 +120,8 @@
       </a>
       <a style="margin-left:16px;font-size:18px;" href="<?php echo html_escape(url('collections')); ?>">
         <?php echo __('Kirjeiden vastaanottajat'); ?></a>
-        <a style="margin-left:50px;font-size:18px">Esipuhe</a>
-        <a style="margin-left:16px;font-size:18px;">Ohjeita</a>
+        <a style="margin-left:50px;font-size:18px;" href="<?php echo html_escape(url('esipuhe')); ?>">Esipuhe</a>
+        <a id="infobtn">Ohjeita</a>
         <span style="float:right;">
           <a id="searchbtn"><?php echo __('Laajennettu haku'); ?></a>
           <?php echo search_form(); ?>
@@ -132,6 +132,12 @@
       <?php echo $this->partial('items/search-form.php',
           array('formAttributes' =>
               array('id'=>'advanced-search-form'))); ?>
+    </div>
+    <div id="instructions" style="display: none;">
+      <ul>
+        <li><a href="<?php echo html_escape(url('ohjeet/merkinnat')); ?>">Transkriptioiden merkinnät</a></li>
+        <li><a href="<?php echo html_escape(url('ohjeet/haku')); ?>">Hakuohjeita</a></li>
+      </ul>
     </div>
   </header>
 

@@ -9,6 +9,15 @@ $(document).ready(function() {
      }
    });
 
+   $('#infobtn').click(function() {
+
+     if ($('#instructions').is(':hidden')) {
+       $('#instructions').slideDown('fast', function() {});
+     } else {
+       $('#instructions').slideUp('fast', function() {});
+     }
+   });
+
    $('#query').attr('placeholder', 'Hae kirjeitä');
 
 });
