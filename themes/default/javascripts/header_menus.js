@@ -18,6 +18,16 @@ $(document).ready(function() {
      }
    });
 
+   /*$('#submit_search_advanced').click(function() {
+     if (!$('select[title = "Hakukenttä"]').is(':selected') ||
+        !$('select[title = "Hakutyyppi"]').is(':selected')) {
+       alert('Valitse hakukenttä ja hakurajoite!');
+       return false;
+     } else {
+       return true;
+     }
+   });*/
+
    $('#query').attr('placeholder', 'Hae kirjeitä');
 
 });

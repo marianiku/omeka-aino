@@ -11,7 +11,7 @@ $(document).ready(function() {
             var last = first + key.length;
             var ext = $('#exhibit3b').text().indexOf(' ', last);
             var ending = $('#exhibit3b').text().substring(last, ext);
- 
+
             if (ending.indexOf(",") >= 0) {
               ending = ending.substring(0, ending.indexOf(","));
             } else if (ending.indexOf(".") >= 0) {
@@ -47,7 +47,7 @@ $(document).ready(function() {
           prev.show().prevAll().hide();
         }
 
-        var bt = $("div.uv.omeka-test-letters:eq(1) iframe").contents().find("div.paging.btn.prev");
+        var bt = $("div.uv.omeka-test-letters:eq(0) iframe").contents().find("div.paging.btn.prev");
         var prevClass = prev.find('.pb').attr('class');
         var currentClass = current.find('.pb').attr('class');
         if (prevClass.slice(0, -1) != currentClass.slice(0, -1)) {
@@ -66,13 +66,13 @@ $(document).ready(function() {
       	var current = $('#exhibit3b').find('.page:eq(' + i + ')');
         var next = current.next();
 
-        var nextBt = $("div.uv.omeka-test-letters:eq(1) iframe").contents().find("div.paging.btn.next");
-        var prevBt = $("div.uv.omeka-test-letters:eq(1) iframe").contents().find("div.paging.btn.prev");
+        var nextBt = $("div.uv.omeka-test-letters:eq(0) iframe").contents().find("div.paging.btn.next");
+        var prevBt = $("div.uv.omeka-test-letters:eq(0) iframe").contents().find("div.paging.btn.prev");
 
         current.hide();
         if (next) {
            next.show().siblings('.page').hide();
-        }       
+        }
 
         var nextClass = next.find('.pb').attr('class');
         var currentClass = current.find('.pb').attr('class');

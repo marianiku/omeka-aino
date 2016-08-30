@@ -43,7 +43,7 @@ $formAttributes['method'] = 'GET';
                   'is not empty' => __('ei ole tyhjä'))
               );
 
-              $label_table_options = str_replace('Valitse', 'Valitse hakutapa', $label_table_options);
+              $label_table_options = str_replace('Valitse', 'Valitse hakurajoite', $label_table_options);
             ?>
 
             <div class="search-entry">

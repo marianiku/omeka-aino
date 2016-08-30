@@ -116,6 +116,18 @@ class SolrSearch_ResultsController
         // If defined, replace `:`; otherwise, revert to `*:*`.
         // Also, clean it up some.
         if (!empty($query)) {
+
+            if (strpos($query, 'ae') !== false) {
+              $query1 = str_replace('ae', '\u00E6', $query);
+              $query .= " OR {$query1}";
+            } else if (strpos($query, 'c') !== false) {
+              $query2 = str_replace('c', '\u00E7', $query);
+              $query .= " OR {$query2}";
+            } else if (strpos($query, 'en') !== false) {
+              $query3 = str_replace('en', '\u00E9n', $query);
+              $query .= " OR {$query3}";
+            }
+
             $query = str_replace(':', ' ', $query);
             $to_remove = array('[', ']');
             foreach ($to_remove as $c) {
@@ -132,10 +144,11 @@ class SolrSearch_ResultsController
         if (!empty($facet)) $query .= " AND {$facet}";
 
         // Limit the query to public items if required
-        if($limitToPublicItems) {
+        /*if($limitToPublicItems) {
            $query .= ' AND public:"true"';
-        }
+        }*/
 
+        echo $query;
         return $query;
 
     }

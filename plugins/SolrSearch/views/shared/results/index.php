@@ -16,7 +16,6 @@
 
 <h2><?php echo __('Hakusanat'); ?></h2>
 
-
 <!-- Search form. -->
 <div class="solr">
   <form id="solr-search-form">
@@ -105,7 +104,6 @@
   </h2>
 
   <?php foreach ($results->response->docs as $doc): ?>
-
     <!-- Document. -->
     <div class="result">
 
