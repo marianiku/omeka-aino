@@ -18,9 +18,9 @@ $sortLinks[__('Lisätty')] = 'added';
 
 <div class="collection">
 
-    <h2><?php echo link_to_collection(); ?></h2>
+    <h2><?php echo link_to_items_browse(metadata('collection', array('Dublin Core', 'Title')), array('collection' => metadata('collection', 'id'))); ?></h2>
     <?php if ($collectionImage = record_image('collection', 'square_thumbnail')): ?>
-        <?php echo link_to_collection($collectionImage, array('class' => 'image')); ?>
+        <div class="image"><?php echo $collectionImage; ?></div>
     <?php endif; ?>
 
     <?php if (metadata('collection', array('Dublin Core', 'Description'))): ?>
