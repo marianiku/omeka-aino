@@ -1,21 +1,21 @@
 <?php
 /**
  * Omeka
- * 
+ *
  * @copyright Copyright 2007-2015 Roy Rosenzweig Center for History and New Media
  * @license http://www.gnu.org/licenses/gpl-3.0.txt GNU GPLv3
  */
 
 /**
  * Return the site-wide search form.
- * 
+ *
  * @package Omeka\View\Helper
  */
 class Omeka_View_Helper_SearchForm extends Zend_View_Helper_Abstract
 {
     /**
      * Return the site-wide search form.
-     * 
+     *
      * @param array $options Valid options are as follows:
      * - show_advanced: whether to show the advanced search; default is false.
      * - submit_value: the value of the submit button; default "Submit".
@@ -36,10 +36,12 @@ class Omeka_View_Helper_SearchForm extends Zend_View_Helper_Abstract
 
         if (isset($_GET['submit_search'])) {
             if (isset($_GET['query'])) {
+                echo $_GET['query'];
                 $filters['query'] = $_GET['query'];
             }
             if (isset($_GET['query_type'])) {
                 $filters['query_type'] = $_GET['query_type'];
+                echo $_GET['query_type'];
             }
             if (isset($_GET['record_types'])) {
                 $filters['record_types'] = $_GET['record_types'];
@@ -50,12 +52,12 @@ class Omeka_View_Helper_SearchForm extends Zend_View_Helper_Abstract
         if (!isset($options['show_advanced'])) {
             $options['show_advanced'] = false;
         }
-        
+
         // Set the default submit value.
         if (!isset($options['submit_value'])) {
             $options['submit_value'] = __('Search');
         }
-        
+
         // Set the default form attributes.
         if (!isset($options['form_attributes'])) {
             $options['form_attributes'] = array();

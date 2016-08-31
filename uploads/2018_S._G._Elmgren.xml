@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-stylesheet type="text/xsl" href="../../TEIBoilerplate/dist/content/teibp.xsl"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0"> 
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -20,7 +20,7 @@
                 <msDesc>
                     <msIdentifier>
                         <settlement>Helsinki</settlement>
-                        <repository>Suomalaisen Kirjallisuuden Seuran kirjallisuusarkisto</repository>
+                        <repository>Suomalaisen Kirjallisuuden Seuran arkiston kirjallisuuden ja kulttuurihistorian arkistoaineistot</repository>
                         <idno>Lna 81</idno>
                     </msIdentifier>
                     <msContents>
@@ -52,7 +52,7 @@
                         <date when="1848-03-15">15.3.1848</date>
                     </dateline>
                 </opener>
-                <pb n="1" facs="lna081_078"/>
+                <pb n="1" facs="Lna081_078"/>
                 <p>31. Mag. S. Elmgren</p>
                 <p>(afs. <gap /> Kellgrens adress)</p>
                 <p>15. Fullmakt å L. Bl. + Forts. å Klv. innehållet härnäst + kapell. Wikman i Längelmäki.</p>
@@ -60,3 +60,5 @@
         </body>
     </text>
 </TEI>
+
+

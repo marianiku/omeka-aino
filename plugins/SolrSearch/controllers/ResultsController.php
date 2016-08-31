@@ -123,11 +123,13 @@ class SolrSearch_ResultsController
             } else if (strpos($query, 'c') !== false) {
               $query2 = str_replace('c', '\u00E7', $query);
               $query .= " OR {$query2}";
-            } else if (strpos($query, 'en') !== false) {
-              $query3 = str_replace('en', '\u00E9n', $query);
+            } else if (strpos($query, 'e') !== false) {
+              $query3 = str_replace('e', '\u00E9', $query);
               $query .= " OR {$query3}";
+            } else if (strpos($query, 'ä') !== false) {
+              $query4 = str_replace('ä', '\u00E6', $query);
+              $query .= " OR {$query4}";
             }
-
             $query = str_replace(':', ' ', $query);
             $to_remove = array('[', ']');
             foreach ($to_remove as $c) {
@@ -147,8 +149,7 @@ class SolrSearch_ResultsController
         /*if($limitToPublicItems) {
            $query .= ' AND public:"true"';
         }*/
-
-        echo $query;
+        
         return $query;
 
     }
