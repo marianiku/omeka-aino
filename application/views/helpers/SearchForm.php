@@ -36,12 +36,10 @@ class Omeka_View_Helper_SearchForm extends Zend_View_Helper_Abstract
 
         if (isset($_GET['submit_search'])) {
             if (isset($_GET['query'])) {
-                echo $_GET['query'];
                 $filters['query'] = $_GET['query'];
             }
             if (isset($_GET['query_type'])) {
                 $filters['query_type'] = $_GET['query_type'];
-                echo $_GET['query_type'];
             }
             if (isset($_GET['record_types'])) {
                 $filters['record_types'] = $_GET['record_types'];

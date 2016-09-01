@@ -102,7 +102,6 @@
   <h2 id="num-found">
     Kirjeitä löytyi: <?php echo $results->response->numFound; ?>
   </h2>
-
   <?php foreach ($results->response->docs as $doc): ?>
     <!-- Document. -->
     <div class="result">
@@ -119,11 +118,13 @@
                 if (empty($title)) {
                     $title = '<i>' . __('Nimetön') . '</i>';
                 }
-                echo $title;
+                $date = '40_t';
+                $place = '41_t';
+                echo $title.", ".date('j.n.Y', strtotime($doc->$date));
             ?></a>
 
         <!-- Result type. -->
-        <span class="result-type">(<?php echo $doc->resulttype; ?>)</span>
+        <!--<span class="result-type">(<?php echo $doc->resulttype; ?>)</span>-->
 
       </div>
 

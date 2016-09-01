@@ -149,7 +149,7 @@ class SolrSearch_ResultsController
         /*if($limitToPublicItems) {
            $query .= ' AND public:"true"';
         }*/
-        
+
         return $query;
 
     }

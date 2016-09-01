@@ -1,21 +1,21 @@
 <?php
 /**
  * Omeka
- * 
+ *
  * @copyright Copyright 2007-2015 Roy Rosenzweig Center for History and New Media
  * @license http://www.gnu.org/licenses/gpl-3.0.txt GNU GPLv3
  */
 
 /**
  * Return a list of search filters in the current request.
- * 
+ *
  * @package Omeka\View\Helper
  */
 class Omeka_View_Helper_SearchFilters extends Zend_View_Helper_Abstract
 {
     /**
      * Return a list of current search filters in use.
-     * 
+     *
      * @param array $options Valid options are as follows:
      * - id (string): the ID of the filter wrapping div.
      * @return string
@@ -50,8 +50,8 @@ class Omeka_View_Helper_SearchFilters extends Zend_View_Helper_Abstract
         }
 
         return $this->view->partial(
-            'search/search-filters.php', 
-            array('options'      => $options, 
+            'search/search-filters.php',
+            array('options'      => $options,
                   'query'        => $query,
                   'query_type'   => $validQueryTypes[$queryType],
                   'record_types' => $recordTypes)
