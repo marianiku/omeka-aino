@@ -53,15 +53,12 @@ class SolrSearch_Helpers_Index
 
     foreach ($item->getAllElementTexts() as $text) {
       $field = $fields->findByText($text);
-
-      $contents = '';
       foreach ($item->getFiles() as $file) {
         if ($file->getExtension() == 'xml') {
           $contents = file_get_contents("http://localhost/files/original/".metadata($file,'filename'));
-          $pattern1 = '#(<teiHeader>).*?(</teiHeader>)#s';
-          $pattern2 = '#(<opener>).*?(</opener>)#s';
-          $contents = preg_replace($pattern1, '', $contents);
-          $contents = preg_replace($pattern2, '', $contents);
+          $cut = strpos($contents, '</opener>') + strlen('</opener>');
+          $end = strlen($contents);
+          $contents = substr($contents, $cut, $end);
           $xml = simplexml_load_file("http://localhost/files/original/".metadata($file,'filename'));
         }
       }
@@ -70,19 +67,25 @@ class SolrSearch_Helpers_Index
       if ($field->label == 'XML File') {
         $text->text = $contents;
         $text->location = $xml->text->body->div->opener->dateline->placeName;
+        $text->date = $xml->text->body->div->opener->dateline->date;
+        $text->type = $xml->text->body->div->attributes()[0];
       }
 
       // Set text field.
       if ($field->is_indexed && $field->label == 'XML File') {
         $doc->setMultiValue($field->indexKey(), $text->text);
         $doc->setMultiValue($field->indexKey(), $text->location);
+        $doc->setMultiValue($field->indexKey(), $text->date);
+        $doc->setMultiValue($field->indexKey(), $text->type);
       } else if ($field->is_indexed && $field->label != 'XML File') {
         $doc->setMultiValue($field->indexKey(), $text->text);
       }
 
       // Set string field.
-      if ($field->is_facet) {
-        $doc->setMultiValue($field->facetKey(), $text->text);
+      if ($field->is_facet && $field->label == 'XML File') {
+        $doc->setMultiValue($field->facetKey(), $text->type);
+      } else if ($field->is_facet && $field->label != 'XML File') {
+        $doc->setMultiValue($field->facetKey(), $text->location);
       }
     }
   }
