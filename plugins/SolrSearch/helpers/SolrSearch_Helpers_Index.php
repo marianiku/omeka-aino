@@ -67,25 +67,21 @@ class SolrSearch_Helpers_Index
       if ($field->label == 'XML File') {
         $text->text = $contents;
         $text->location = $xml->text->body->div->opener->dateline->placeName;
-        $text->date = $xml->text->body->div->opener->dateline->date;
-        $text->type = $xml->text->body->div->attributes()[0];
       }
 
       // Set text field.
       if ($field->is_indexed && $field->label == 'XML File') {
         $doc->setMultiValue($field->indexKey(), $text->text);
         $doc->setMultiValue($field->indexKey(), $text->location);
-        $doc->setMultiValue($field->indexKey(), $text->date);
-        $doc->setMultiValue($field->indexKey(), $text->type);
       } else if ($field->is_indexed && $field->label != 'XML File') {
         $doc->setMultiValue($field->indexKey(), $text->text);
       }
 
       // Set string field.
       if ($field->is_facet && $field->label == 'XML File') {
-        $doc->setMultiValue($field->facetKey(), $text->type);
-      } else if ($field->is_facet && $field->label != 'XML File') {
         $doc->setMultiValue($field->facetKey(), $text->location);
+      } else if ($field->is_facet && $field->label != 'XML File') {
+        $doc->setMultiValue($field->facetKey(), $text->text);
       }
     }
   }

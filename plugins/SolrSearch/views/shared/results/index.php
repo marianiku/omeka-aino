@@ -66,7 +66,11 @@
     <?php if (count(get_object_vars($facets))): ?>
 
       <!-- Facet label. -->
-      <?php $label = SolrSearch_Helpers_Facet::keyToLabel($name); ?>
+      <?php $label = SolrSearch_Helpers_Facet::keyToLabel($name);
+        $label = str_replace('Language', 'Kieli', $label);
+        $label = str_replace('XML File', 'Kirjoituspaikka', $label);
+        $label = str_replace('Type', 'Laji', $label);
+      ?>
       <strong><?php echo $label; ?></strong>
 
       <ul>
@@ -79,6 +83,9 @@
 
             <!-- Facet link. -->
             <a href="<?php echo $url; ?>" class="facet-value">
+              <?php if ($label == 'Kirjoituspaikka') {
+                $value = ucfirst($value);
+              } ?>
               <?php echo $value; ?>
             </a>
 
@@ -119,7 +126,6 @@
                     $title = '<i>' . __('Nimetön') . '</i>';
                 }
                 $date = '40_t';
-                $place = '41_t';
                 echo $title.", ".date('j.n.Y', strtotime($doc->$date));
             ?></a>
 
