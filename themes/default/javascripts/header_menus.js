@@ -4,6 +4,10 @@ $(document).ready(function() {
 
      if ($('#ext-search').is(':hidden')) {
        $('#ext-search').slideDown('fast', function() {});
+       $('select[title = "Hakutyyppi"]')
+       .find('option[value="contains"]')
+       .attr('selected', true)
+       /*$('select[title = "Hakutyyppi"]').hide();*/
      } else {
        $('#ext-search').slideUp('fast', function() {});
      }
@@ -17,16 +21,6 @@ $(document).ready(function() {
        $('#instructions').slideUp('fast', function() {});
      }
    });
-
-   /*$('#submit_search_advanced').click(function() {
-     if (!$('select[title = "Hakukenttä"]').is(':selected') ||
-        !$('select[title = "Hakutyyppi"]').is(':selected')) {
-       alert('Valitse hakukenttä ja hakurajoite!');
-       return false;
-     } else {
-       return true;
-     }
-   });*/
 
    $('#query').attr('placeholder', 'Hae kirjeitä');
 

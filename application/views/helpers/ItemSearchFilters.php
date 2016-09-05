@@ -1,14 +1,14 @@
 <?php
 /**
  * Omeka
- * 
+ *
  * @copyright Copyright 2007-2012 Roy Rosenzweig Center for History and New Media
  * @license http://www.gnu.org/licenses/gpl-3.0.txt GNU GPLv3
  */
 
 /**
  * Show the currently-active filters for a search/browse.
- * 
+ *
  * @package Omeka\View\Helper
  */
 class Omeka_View_Helper_ItemSearchFilters extends Zend_View_Helper_Abstract
@@ -23,12 +23,12 @@ class Omeka_View_Helper_ItemSearchFilters extends Zend_View_Helper_Abstract
     public function itemSearchFilters(array $params = null)
     {
         if ($params === null) {
-            $request = Zend_Controller_Front::getInstance()->getRequest(); 
+            $request = Zend_Controller_Front::getInstance()->getRequest();
             $requestArray = $request->getParams();
         } else {
             $requestArray = $params;
         }
-        
+
         $db = get_db();
         $displayArray = array();
         foreach ($requestArray as $key => $value) {
@@ -43,7 +43,7 @@ class Omeka_View_Helper_ItemSearchFilters extends Zend_View_Helper_Abstract
                             $displayValue = $itemType->name;
                         }
                         break;
-                    
+
                     case 'collection':
                         $collection = $db->getTable('Collection')->find($value);
                         if ($collection) {
@@ -68,7 +68,7 @@ class Omeka_View_Helper_ItemSearchFilters extends Zend_View_Helper_Abstract
                     case 'featured':
                         $displayValue = ($value == 1 ? __('Yes') : $displayValue = __('No'));
                         break;
-                        
+
                     case 'search':
                     case 'tags':
                     case 'range':
@@ -84,7 +84,7 @@ class Omeka_View_Helper_ItemSearchFilters extends Zend_View_Helper_Abstract
         $displayArray = apply_filters('item_search_filters', $displayArray, array('request_array' => $requestArray));
         
         // Advanced needs a separate array from $displayValue because it's
-        // possible for "Specific Fields" to have multiple values due to 
+        // possible for "Specific Fields" to have multiple values due to
         // the ability to add fields.
         if(array_key_exists('advanced', $requestArray)) {
             $advancedArray = array();

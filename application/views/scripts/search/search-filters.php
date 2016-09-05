@@ -1,5 +1,6 @@
 <div id="<?php echo $options['id']; ?>">
 <ul>
+    <?php echo $query; ?>
     <li><?php echo __('Kysely:');?> <?php echo html_escape($query); ?></li>
     <li><?php echo __('Kyselyn laji:');?> <?php echo html_escape($query_type); ?></li>
     <li><?php echo __('Dokumenttilajit:');?>
