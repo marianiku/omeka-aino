@@ -136,7 +136,6 @@
     <div id="instructions" style="display: none;">
       <ul>
         <li><a href="<?php echo html_escape(url('ohjeet/merkinnat')); ?>">Transkriptioiden merkinnät</a></li>
-        <li><a href="<?php echo html_escape(url('ohjeet/haku')); ?>">Hakuohjeita</a></li>
       </ul>
     </div>
   </header>
