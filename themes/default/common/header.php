@@ -115,13 +115,10 @@
   </div>
   <div id="search-container" role="search">
     <span style="width:99%;float:left;margin-right:16px;margin-top:20px;margin-bottom:0;">
-      <a style="margin-left:16px;font-size:18px;" href="<?php echo html_escape(url('items')); ?>">
-        <?php echo __('Kaikki kirjeet'); ?>
-      </a>
       <a style="margin-left:16px;font-size:18px;" href="<?php echo html_escape(url('collections')); ?>">
         <?php echo __('Kirjeiden vastaanottajat'); ?></a>
         <a style="margin-left:50px;font-size:18px;" href="<?php echo html_escape(url('esipuhe')); ?>">Esipuhe</a>
-        <a id="infobtn">Ohjeita</a>
+        <a id="infobtn">Tietoja</a>
         <span style="float:right;">
           <a id="searchbtn"><?php echo __('Laajennettu haku'); ?></a>
           <?php echo search_form(); ?>
@@ -136,6 +133,9 @@
     <div id="instructions" style="display: none;">
       <ul>
         <li><a href="<?php echo html_escape(url('ohjeet/merkinnat')); ?>">Transkriptioiden merkinnät</a></li>
+        <li><a href="<?php echo html_escape(url('ohjeet/proosa')); ?>">4. runon proosatiivistelmä</a></li>
+        <li><a href="<?php echo html_escape(url('ohjeet/runo')); ?>">Tietoja Aino-runosta</a></li>
+        <li><a href="<?php echo html_escape(url('ohjeet/toimitus')); ?>">Lönnrotin toimitustavat</a></li>
       </ul>
     </div>
   </header>
