@@ -97,6 +97,8 @@
   queue_js_file('globals');
   queue_js_file('default');
   queue_js_file('jquery-1.12.4.min');
+  queue_js_file('jquery-ui');
+  queue_js_file('jquery.mousewheel.min');
   queue_js_file('header_menus');
   echo head_js();
   ?>
@@ -110,18 +112,16 @@
   <div id="site-title" style="width:98%;height:10%;">
     <?php echo link_to_home_page(); ?>
      <a href="http://www.finlit.fi" target="_blank">
-      <img width="200px" style="float:right;margin-right:16px;" src="http://localhost/sks_header_logo.png" />
+      <img width="200px" style="float:right;margin-right:16px;" src="http://localhost/omeka-aino/sks_header_logo.png" />
     </a>
   </div>
   <div id="search-container" role="search">
     <span style="width:99%;float:left;margin-right:16px;margin-top:20px;margin-bottom:0;">
-      <a style="margin-left:16px;font-size:18px;" href="<?php echo html_escape(url('collections')); ?>">
-        <?php echo __('Kirjeiden vastaanottajat'); ?></a>
-        <a style="margin-left:50px;font-size:18px;" href="<?php echo html_escape(url('esipuhe')); ?>">Esipuhe</a>
+        <a style="margin-left:25px;font-size:18px;" href="<?php echo html_escape(url('esipuhe')); ?>">Esipuhe</a>
+        <a style="margin-left:15px;margin-right:15px;font-size:18px;" href="<?php echo html_escape(url('kerrostumat')); ?>">Runon kerrostumat</a>
         <a id="infobtn">Tietoja</a>
         <span style="float:right;">
           <a id="searchbtn"><?php echo __('Laajennettu haku'); ?></a>
-          <?php echo search_form(); ?>
         </span>
       </span>
     </div>
@@ -132,9 +132,6 @@
     </div>
     <div id="instructions" style="display: none;">
       <ul>
-        <li><a href="<?php echo html_escape(url('ohjeet/merkinnat')); ?>">Transkriptioiden merkinnät</a></li>
-        <li><a href="<?php echo html_escape(url('ohjeet/proosa')); ?>">4. runon proosatiivistelmä</a></li>
-        <li><a href="<?php echo html_escape(url('ohjeet/runo')); ?>">Tietoja Aino-runosta</a></li>
         <li><a href="<?php echo html_escape(url('ohjeet/toimitus')); ?>">Lönnrotin toimitustavat</a></li>
       </ul>
     </div>

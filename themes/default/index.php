@@ -36,7 +36,7 @@
   if ($recentItems):
     ?>
     <div id="recent-items">
-      <h2><?php echo __('Viimeksi lisätyt kirjeet'); ?></h2>
+      <h2><?php echo __('Viimeksi lisätyt aineistot'); ?></h2>
       <?php echo recent_items($recentItems); ?>
     </div><!--end recent-items -->
   <?php endif; ?>

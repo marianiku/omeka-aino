@@ -2571,6 +2571,18 @@ th {
     background:#fffAF0;
   }
 
+  a.fst {
+    background-color: #99ed09 !important;
+  }
+
+  a.nd {
+    background-color: #ff89ee !important;
+  }
+
+  a.rd {
+    background-color: #fdf308 !important;
+  }
+
   .callout {
     z-index:20;
     position:absolute;
@@ -2642,8 +2654,8 @@ th {
     background-color: #e9e3f9;
     width: auto;
     position: absolute;
-    left: 29.5em;
-    top: 6.9em;
+    left: 8em;
+    top: 9.4em;
     padding-left: 1em !important;
     z-index: 9999;
     opacity: 1;
@@ -2663,6 +2675,14 @@ th {
 
   #markings ul li {
     margin-bottom: 1em;
+  }
+
+  #poem {
+    margin-left: 50px;
+  }
+
+  #footnotes {
+    margin-left: 50px;
   }
 
   .
