@@ -10932,3 +10932,8 @@ convert: no decode delegate for this image format `/tmp/b8b66ee06b28c8cfa6f49956
 convert: no images defined `/tmp/fullsize_b8b66ee06b28c8cfa6f499567f756759.jpg' @ error/convert.c/ConvertImageCommand/3210.
 
 2016-11-09T14:24:17+02:00 ERR (3): ImageMagick failed with status code 1.
+2016-11-22T09:26:12+02:00 WARN (4): Error output from ImageMagick:
+convert: no decode delegate for this image format `/tmp/b31ecb569ea9aac9ec974327124411c9.xml' @ error/svg.c/ReadSVGImage/2952.
+convert: no images defined `/tmp/fullsize_b31ecb569ea9aac9ec974327124411c9.jpg' @ error/convert.c/ConvertImageCommand/3210.
+
+2016-11-22T09:26:12+02:00 ERR (3): ImageMagick failed with status code 1.

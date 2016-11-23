@@ -118,8 +118,9 @@
   <div id="search-container" role="search">
     <span style="width:99%;float:left;margin-right:16px;margin-top:20px;margin-bottom:0;">
         <a style="margin-left:25px;font-size:18px;" href="<?php echo html_escape(url('esipuhe')); ?>">Esipuhe</a>
-        <a style="margin-left:15px;margin-right:15px;font-size:18px;" href="<?php echo html_escape(url('kerrostumat')); ?>">Runon kerrostumat</a>
-        <a id="infobtn">Tietoja</a>
+        <a style="margin-left:25px;margin-right:15px;font-size:18px;" href="<?php echo html_escape(url('kerrostumat')); ?>">Runon kerrostumat</a>
+        <a id="infobtn">Tietoja Aino-runosta</a>
+        <a id="kaukonen-menu-btn">Väinö Kaukosen säetutkimus</a>
         <span style="float:right;">
           <a id="searchbtn"><?php echo __('Laajennettu haku'); ?></a>
         </span>
@@ -129,6 +130,13 @@
       <?php echo $this->partial('items/search-form.php',
           array('formAttributes' =>
               array('id'=>'advanced-search-form'))); ?>
+    </div>
+    <div id="kaukonen-menu" style="display:none;">
+      <ul>
+        <li><a href="<?php echo html_escape(url('kaukonen/saetutkimus')); ?>">Kaukosen säeviitteet</a></li>
+        <li><a href="<?php echo html_escape(url('kaukonen/taustaa')); ?>">Säetutkimuksen taustaa</a></li>
+        <li><a href="<?php echo html_escape(url('kaukonen/ohjeita')); ?>">Säetutkimuksen viitteet ja kommentaarit</a></li>
+      </ul>
     </div>
     <div id="instructions" style="display: none;">
       <ul>

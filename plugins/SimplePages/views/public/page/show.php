@@ -53,16 +53,29 @@ echo head(array(
 
       var xNew = (xScreen - xImage) / scale;
       var yNew = (yScreen - yImage) / scale;
-
       xLast = xScreen;
       yLast = yScreen;
-      
+
       $('.pic')
       .css('transform', 'scale(' + scale + ')' + 'translate(' + xNew + 'px, ' + yNew + 'px' + ')')
       .css('transform-origin', xImage + 'px ' + yImage + 'px')
       return false;
     });
+
+    $('.kaukonen-btn').each(function(i, bt) {
+      $(bt).click(function() {
+        $('.kaukonen-comm').each(function(j, comm) {
+          if (j == i && $(comm).is(':hidden')) {
+            $(comm).slideDown('fast', function() {});
+          } else if (j == i && !$(comm).is(':hidden')) {
+            $(comm).slideUp('fast', function() {});
+          }
+        });
+      });
+    });
+
   });
+
   </script>
   <?php if (!$is_home_page): ?>
     <h2 style="margin-top: 1em; margin-bottom: 2em;"><?php echo metadata('simple_pages_page', 'title'); ?></h2>

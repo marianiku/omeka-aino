@@ -2654,9 +2654,10 @@ th {
     background-color: #e9e3f9;
     width: auto;
     position: absolute;
-    left: 8em;
-    top: 9.4em;
-    padding-left: 1em !important;
+    left: 19.1em;
+    top: 7em;
+    padding-left: 0.5em !important;
+    padding-right: 0.5em !important;
     z-index: 9999;
     opacity: 1;
     font-size: 16px;
@@ -2667,9 +2668,41 @@ th {
   #instructions ul {
     margin: 0;
     padding: 0.5em;
+    list-style-type: none;
   }
 
   #instructions ul li {
+    line-height: 30px;
+  }
+
+  #kaukonen-menu-btn {
+    margin-left: 16px;
+    font-size: 18px !important;
+    cursor: pointer;
+  }
+
+  #kaukonen-menu {
+    background-color: #e9e3f9;
+    width: auto;
+    position: absolute;
+    left: 31em;
+    top: 7em;
+    padding-left: 0.5em !important;
+    padding-right: 0.5em !important;
+    z-index: 9999;
+    opacity: 1;
+    font-size: 16px;
+    border-radius: 2px;
+    border: solid 1px black;
+  }
+
+  #kaukonen-menu ul {
+    margin: 0;
+    padding: 0.5em;
+    list-style-type: none;
+  }
+
+  #kaukonen-menu ul li {
     line-height: 30px;
   }
 

@@ -22,6 +22,13 @@ $(document).ready(function() {
      }
    });
 
-   $('#query').attr('placeholder', 'Hae kirjeitä');
+   $('#kaukonen-menu-btn').click(function() {
+
+     if ($('#kaukonen-menu').is(':hidden')) {
+       $('#kaukonen-menu').slideDown('fast', function() {});
+     } else {
+       $('#kaukonen-menu').slideUp('fast', function() {});
+     }
+   });
 
 });
