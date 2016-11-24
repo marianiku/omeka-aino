@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Aino-runon 4. runo</title>
+                <author>Elias Lönnrot</author>
+            </titleStmt>
+            <editionStmt>
+                <edition>Elias Lönnrotin kirjeenvaihdon digitaalinen editio</edition>
+            </editionStmt>
+            <publicationStmt>
+                <distributor>Suomalaisen Kirjallisuuden
+                    Seura</distributor>
+                <date when="2016-11-23">23.11.2016</date>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <settlement>Helsinki</settlement>
+                        <repository>Suomalaisen Kirjallisuuden Seuran arkiston kirjallisuuden ja kulttuurihistorian arkistoaineistot</repository>
+                        <idno></idno>
+                    </msIdentifier>
+                    <msContents>
+                        <msItem n="1" class="letter">
+                            <author><surname>Lönnrot</surname>
+                                <forename>Elias</forename></author>
+                        </msItem>
+                        <msItem n="2" class="transcription">
+                            <bibl></bibl>
+                        </msItem>
+                    </msContents>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    
+    <text>
+        <body>
+            <div type="runo">
+                <pb n="1" facs="lna038_22" />
+                <p><hi rend="underline">4. Runo. 518 värsyä.</hi></p>
+                <p>Wäinämöinen tapa’aa Joukahaisen sisaren vastan taitossa, ja pyytää häntä puolisoksensa 1−30. 
+                    Tytär juoksee itkein kotia ja kertoo asian äitillensä 31−116. Äiti kieltää häntä suremasta, 
+                    ja käskee ennemmin iloitsemaan ja koreissa vaatteissa käymään 117−188. Tytär itkee itkemistänsä
+                    ja sanoo, ei tahtovansa iki vanhalle miehelle puolisoksi mennä 189−254. Huolissansa kävellen 
+                    eksyy korpeen, joutuu oudolle meren rannalle, lähtee pesemään itseänsä ja hukkuu veteen 255−370.
+                    Äiti itkee yöt päivät hukkunutta tytärtänsä 371−518.</p>
+                <pb n="2" facs="lna038_59" />
+                <p><hi rend="underline">Neljäs Runo</hi> <ref>*)<note>Se innehållsförteçkningen.)</note></ref></p>
+                <lg>
+                    <l>Tuopa Aino neito nuori,</l> 
+                    <l>Sisar nuoren Joukahaisen</l> 
+                    <l>Läksi luutoa lehosta, <ref>*)<note>3: 3. lehtimetsästä.</note></ref></l> 
+                    <l>Wastaksia varvikosta; <ref>*)<note>4: 1. vastan, vihdan aineita.</note></ref></l>
+                    <l>Taittoi vastan taatollensa, <ref>*)<note>5: 2. vihdan.</note></ref>  </l> 
+                    <l>Toisen taittoi maammollensa,</l> 
+                    <l>Kokoeli kolmannenki</l> 
+                    <l>Werevälle veiollensa. <ref>*)<note>8: 2. veljellensä.</note></ref></l> 
+                </lg>
+                <lg>
+                    <l>Jo astui kohin kotia,</l> 
+                    <l>Lepikköä leuhautti,</l> 
+                    <l>Tuli vanha Wäinämöinen;</l> 
+                    <l>Näki neitosen lehossa,</l> 
+                    <l>Hienohelmen heinikössä</l> 
+                    <l>Sanan virkkoi, noin nimesi:</l> 
+                    <l>"Eläpä muille neiti nuori</l> 
+                    <l>Kun minulle neiti nuori</l> 
+                    <l>Kanna kaulan helmilöitä,</l>
+                </lg>
+                <pb n="3" facs="lna038_60" />
+                <lg>
+                    <l>Rinnan ristiä rakenna,</l>
+                    <l>Pane päätä palmikolle,</l>
+                    <l>Sio silkillä hivusta!"</l>
+                </lg>
+                <lg>
+                    <l>Neiti tuon sanoiksi virkki:</l>
+                    <l>"En sinulle, enkä muille</l>
+                    <l>Kanna rinnan ristilöitä,</l>
+                    <l>Päällä silkillä sitaise,</l>
+                    <l>Huoli en haahen haljakoista <ref>*)<note>25:3. haahden; hahden; laivan</note></ref></l> 
+                    <l>Wehnän viploista valita, <ref>*)<note>26:2. viipaleista; pytköistä</note></ref></l> 
+                    <l>Asun kaioissa sovissa, <ref>*)<note>27. paidoissa; vaatteissa</note></ref></l> 
+                    <l>Tykönä hyvän isoni</l>
+                    <l>Kanssa armahan emoni."</l>
+                </lg>
+            </div>
+        </body>
+    </text>
+</TEI>

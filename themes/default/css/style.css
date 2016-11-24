@@ -2112,6 +2112,7 @@ th {
     display: inline;
     padding: 0 0 0 1.88679%;
     margin-bottom: 2%;
+    margin-top: 1.5%;
   }
 
   #home #secondary {
@@ -2282,7 +2283,7 @@ th {
   /* @group ----- Advanced Search Form ----- */
   #advanced-search-form {
     position: absolute;
-    right: 15em;
+    right: 1em;
     top: 6.8em;
     width: 25%;
     border: solid 0.5px;
@@ -2421,6 +2422,27 @@ th {
     margin: auto;
     object-fit: contain;
     border-style: none !important;
+  }
+
+  .pic2 {
+    max-height: 100%;
+    max-width: 100%;
+    margin: auto;
+    object-fit: contain;
+    border-style: none !important;
+  }
+
+  #arrows {
+    display: inline-block !important;
+    position: absolute;
+    right: 3em;
+    z-index:9999;
+  }
+
+  #arrows a {
+    color: red;
+
+    z-index:9999;
   }
 
   #infopanel {
@@ -2583,6 +2605,10 @@ th {
     background-color: #fdf308 !important;
   }
 
+  a.addition {
+    background-color: #fff !important;
+  }
+
   .callout {
     z-index:20;
     position:absolute;
@@ -2645,7 +2671,7 @@ th {
   }
 
   #infobtn {
-    margin-left: 16px;
+    margin-left: 25px;
     font-size: 18px !important;
     cursor: pointer;
   }
@@ -2654,7 +2680,7 @@ th {
     background-color: #e9e3f9;
     width: auto;
     position: absolute;
-    left: 19.1em;
+    left: 1.3em;
     top: 7em;
     padding-left: 0.5em !important;
     padding-right: 0.5em !important;
@@ -2676,7 +2702,7 @@ th {
   }
 
   #kaukonen-menu-btn {
-    margin-left: 16px;
+    margin-left: 40px;
     font-size: 18px !important;
     cursor: pointer;
   }
@@ -2685,7 +2711,7 @@ th {
     background-color: #e9e3f9;
     width: auto;
     position: absolute;
-    left: 31em;
+    left: 36.8em;
     top: 7em;
     padding-left: 0.5em !important;
     padding-right: 0.5em !important;
@@ -2703,6 +2729,37 @@ th {
   }
 
   #kaukonen-menu ul li {
+    line-height: 30px;
+  }
+
+  #sanat-menu-btn {
+    margin-left: 40px;
+    font-size: 18px !important;
+    cursor: pointer;
+  }
+
+  #sanat-menu {
+    background-color: #e9e3f9;
+    width: auto;
+    position: absolute;
+    left: 12.8em;
+    top: 7em;
+    padding-left: 0.5em !important;
+    padding-right: 0.5em !important;
+    z-index: 9999;
+    opacity: 1;
+    font-size: 16px;
+    border-radius: 2px;
+    border: solid 1px black;
+  }
+
+  #sanat-menu ul {
+    margin: 0;
+    padding: 0.5em;
+    list-style-type: none;
+  }
+
+  #sanat-menu ul li {
     line-height: 30px;
   }
 

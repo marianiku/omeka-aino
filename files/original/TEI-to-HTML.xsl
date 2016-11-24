@@ -57,7 +57,7 @@
     </xsl:template>
 
     <xsl:template match="tei:ref" priority="99">
-      <a class="comm tooltip bt" href="#">
+      <a class="comm tooltip bt addition" href="#">
         <xsl:value-of select="node()"/>
         <span><xsl:value-of select="current()/tei:note" /></span>
       </a>

@@ -13,6 +13,8 @@ echo head(array(
 
 <div id="primary">
   <script>
+
+  // Simple Pages-sivujen kuvaviewerin toimintoja: zoomaus, kuvissa siirtyminen
   $(document).ready(function() {
 
     $('.pic').draggable();
@@ -56,11 +58,13 @@ echo head(array(
       xLast = xScreen;
       yLast = yScreen;
 
-      $('.pic')
+      $('.pic2')
       .css('transform', 'scale(' + scale + ')' + 'translate(' + xNew + 'px, ' + yNew + 'px' + ')')
       .css('transform-origin', xImage + 'px ' + yImage + 'px')
       return false;
     });
+
+    $('.pic2').draggable();
 
     $('.kaukonen-btn').each(function(i, bt) {
       $(bt).click(function() {
@@ -74,6 +78,35 @@ echo head(array(
       });
     });
 
+    $('.pic2').not(':first').hide();
+
+    var i = 0;
+
+    $('#fwd').click(function() {
+      if (i > $('.pic2').length) {
+        return false;
+      }
+
+      var current = $('.pic2:eq(' + i + ')');
+      var next = current.next();
+
+      next.show();
+      next.siblings().hide();
+      i++;
+    });
+
+    $('#bwd').click(function() {
+      if (i == 0) {
+        return false;
+      }
+
+      var current = $('.pic2:eq(' + i + ')');
+      var prev = current.prev();
+
+      prev.show();
+      prev.siblings().hide();
+      i--;
+    });
   });
 
   </script>

@@ -117,19 +117,17 @@
   </div>
   <div id="search-container" role="search">
     <span style="width:99%;float:left;margin-right:16px;margin-top:20px;margin-bottom:0;">
-        <a style="margin-left:25px;font-size:18px;" href="<?php echo html_escape(url('esipuhe')); ?>">Esipuhe</a>
-        <a style="margin-left:25px;margin-right:15px;font-size:18px;" href="<?php echo html_escape(url('kerrostumat')); ?>">Runon kerrostumat</a>
-        <a id="infobtn">Tietoja Aino-runosta</a>
+        <a id="infobtn">Aino Kalevalassa</a>
+        <a id="sanat-menu-btn">Aino-runon sanat</a>
+        <a style="margin-left:40px;font-size:18px;" href="<?php echo html_escape(url('kerrostumat')); ?>">Runon kerrostumat</a>
         <a id="kaukonen-menu-btn">Väinö Kaukosen säetutkimus</a>
-        <span style="float:right;">
-          <a id="searchbtn"><?php echo __('Laajennettu haku'); ?></a>
-        </span>
       </span>
     </div>
-    <div id="ext-search" style="display: none;">
-      <?php echo $this->partial('items/search-form.php',
-          array('formAttributes' =>
-              array('id'=>'advanced-search-form'))); ?>
+    <div id="sanat-menu" style="display:none;">
+      <ul>
+        <li><a href="<?php echo html_escape(url('sanat/selitykset')); ?>">Sanaselitykset</a></li>
+        <li><a href="<?php echo html_escape(url('sanat/periaatteet')); ?>">Sanaselitysten periaatteet</a></li>
+      </ul>
     </div>
     <div id="kaukonen-menu" style="display:none;">
       <ul>

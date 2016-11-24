@@ -31,4 +31,13 @@ $(document).ready(function() {
      }
    });
 
+   $('#sanat-menu-btn').click(function() {
+
+     if ($('#sanat-menu').is(':hidden')) {
+       $('#sanat-menu').slideDown('fast', function() {});
+     } else {
+       $('#sanat-menu').slideUp('fast', function() {});
+     }
+   });
+
 });
