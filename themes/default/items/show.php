@@ -6,7 +6,6 @@ queue_js_file('comments');
 queue_js_file('page-formatting-xhtml');
 queue_js_file('togglesHTML');
 queue_js_file('toggles-xhtml');
-queue_js_file('uv-image-viewer-xhtml');
 queue_js_file('jquery-image-viewer-xhtml');
 
 echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'bodyclass' => 'item show')); ?>
@@ -24,45 +23,6 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'body
   </span>
 </h1>
 
-<h2 style="font-weight:bold;">1. UV-plugin, PHP-käännetty XML-transkriptio</h2>
-<div id="exhibit3">
-  <div id="exhibit3a">
-    <?php
-    echo get_specific_plugin_hook_output('UniversalViewer', 'public_items_show', array(
-      'view' => $this,
-      'record' => $item,
-    ));
-    ?>
-  </div>
-  <div id="exhibit3b">
-    <span style="display:inline;">
-      <input type="checkbox" onclick="toggleMarkingsXML()" checked/>Merkinnät&nbsp;&nbsp;
-      <input type="checkbox" onclick="toggleCommentsXML()" checked/>Kommentit
-    </span>
-    <span style="float:right;">
-      <a id="btPrevXML" style="cursor:pointer;font-size:20px;">&#8592;</a>
-      <a id="btNextXML" style="cursor:pointer;font-size:20px;">&#8594;</a>
-    </span>
-    <div class="textFrame">
-      <?php
-      $files = $item->Files;
-      foreach ($files as $file):
-        if ($file->getExtension() == 'xml'):
-          $xmlDoc = new DOMDocument();
-          $xmlDoc->load("http://localhost/omeka-aino/files/original/".metadata($file,'filename'));
-          $xslDoc = new DOMDocument();
-          $xslDoc->load("http://localhost/omeka-aino/files/original/TEI-to-HTML.xsl");
-          $proc = new XSLTProcessor();
-          $proc->importStylesheet($xslDoc);
-          echo $proc->transformToXML($xmlDoc);
-        endif;
-      endforeach;
-      ?>
-    </div>
-  </div>
-</div>
-
-<h2 style="font-weight:bold;">2. Käsin rakennettu viewer (jquery + lisäosia) + PHP-käännetty XML-transkriptio</h2>
 <div id="exhibit2">
   <div id="exhibit2a">
     <div id="picframe">
