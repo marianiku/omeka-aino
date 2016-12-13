@@ -127,8 +127,8 @@
     </div>
     <div id="sanat-menu" style="display:none;">
       <ul>
-        <li><a href="<?php echo html_escape(url('sanat/selitykset')); ?>">Sanaselitykset</a></li>
-        <li><a href="<?php echo html_escape(url('sanat/periaatteet')); ?>">Sanaselitysten periaatteet</a></li>
+        <li><a href="<?php echo html_escape(url('sanat/selitykset')); ?>">Sananselitykset</a></li>
+        <li><a href="<?php echo html_escape(url('sanat/periaatteet')); ?>">Sananselitysten periaatteet</a></li>
       </ul>
     </div>
     <div id="kaukonen-menu" style="display:none;">
