@@ -112,7 +112,7 @@
   <div id="site-title" style="width:98%;height:10%;">
     <?php echo link_to_home_page(); ?>
      <a href="http://www.finlit.fi" target="_blank">
-      <img width="200px" style="float:right;margin-right:16px;" src="http://localhost/omeka-aino/sks_header_logo.png" />
+      <img width="200px" style="float:right;margin-right:16px;" src="http://128.214.12.182/omeka/sks_header_logo.png" />
     </a>
   </div>
   <div id="search-container" role="search">
@@ -121,6 +121,8 @@
         <a id="sanat-menu-btn">Aino-runon sanat</a>
         <a style="margin-left:40px;font-size:18px;" href="<?php echo html_escape(url('kerrostumat')); ?>">Runon kerrostumat</a>
         <a id="kaukonen-menu-btn">Väinö Kaukosen säetutkimus</a>
+        <a style="margin-left:40px;font-size:18px;" href="<?php echo html_escape(url('tiedot')); ?>">Julkaisun tiedot</a>
+        <a id="linkit-menu-btn">Aikaisemmat julkaisut ja linkit</a>
       </span>
     </div>
     <div id="sanat-menu" style="display:none;">
@@ -134,6 +136,13 @@
         <li><a href="<?php echo html_escape(url('kaukonen/saetutkimus')); ?>">Kaukosen säeviitteet</a></li>
         <li><a href="<?php echo html_escape(url('kaukonen/taustaa')); ?>">Säetutkimuksen taustaa</a></li>
         <li><a href="<?php echo html_escape(url('kaukonen/ohjeita')); ?>">Säetutkimuksen viitteet ja kommentaarit</a></li>
+      </ul>
+    </div>
+    <div id="linkit-menu" style="display:none;">
+      <ul>
+        <li><a href="<?php echo html_escape(url('linkit/julkaisut')); ?>">Aikaisemmat julkaisut aiheesta</a></li>
+        <li><a href="<?php echo html_escape(url('linkit/kalevala')); ?>">Lisää Kalevalasta ja Elias Lönnrotista</a></li>
+        <li><a href="<?php echo html_escape(url('linkit/aino')); ?>">Lisää Aino-runosta ja Lönnrotin toimitustavoista</a></li>
       </ul>
     </div>
     <div id="instructions" style="display: none;">

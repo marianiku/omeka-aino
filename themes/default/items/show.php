@@ -16,7 +16,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'body
     $files = $item->Files;
     foreach ($files as $file):
       if ($file->getExtension() == 'xml'):
-        echo '<a class="xmlBt" href="http://localhost/omeka-aino/files/original/'.metadata($file,'filename').'">
+        echo '<a class="xmlBt" href="http://128.214.12.182/omeka/files/original/'.metadata($file,'filename').'">
         <span class="xml">XML</span></a>';
       endif;
     endforeach; ?>
@@ -39,7 +39,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'body
       $files = $item->Files;
       foreach ($files as $file):
         if ($file->getExtension() == 'jpg'):
-          echo '<img class="pic" style="background:transparent" src="http://localhost/omeka-aino/files/original/'.metadata
+          echo '<img class="pic" style="background:transparent" src="http://128.214.12.182/omeka/files/original/'.metadata
           ($file,'filename').'" />';
         endif;
       endforeach; ?>
@@ -68,9 +68,9 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'body
       foreach ($files as $file):
         if ($file->getExtension() == 'xml'):
           $xmlDoc = new DOMDocument();
-          $xmlDoc->load("http://localhost/omeka-aino/files/original/".metadata($file,'filename'));
+          $xmlDoc->load("http://128.214.12.182/omeka/files/original/".metadata($file,'filename'));
           $xslDoc = new DOMDocument();
-          $xslDoc->load("http://localhost/omeka-aino/files/original/TEI-to-HTML.xsl");
+          $xslDoc->load("http://128.214.12.182/omeka/files/original/TEI-to-HTML.xsl");
           $proc = new XSLTProcessor();
           $proc->importStylesheet($xslDoc);
           echo $proc->transformToXML($xmlDoc);

@@ -2130,7 +2130,7 @@ th {
     background-size: cover !important;
     -ms-behavior: url("../javascripts/backgroundsize.min.htc");
     /*border-style: solid;*/
-    background-color: #dfc1c1;
+    background-color: #699cfa;
     width: 100%;
     height: 7.3em;
   }
@@ -2403,7 +2403,7 @@ th {
     border: 3px solid #ccc;
     border-radius: 5px;
     text-align: center;
-    background-color: #333333;
+    background-color: #d1eeee;
   }
 
   .fullscreen {
@@ -2677,7 +2677,7 @@ th {
   }
 
   #instructions {
-    background-color: #e9e3f9;
+    background-color: #d1eeee;
     width: auto;
     position: absolute;
     left: 1.3em;
@@ -2708,7 +2708,7 @@ th {
   }
 
   #kaukonen-menu {
-    background-color: #e9e3f9;
+    background-color: #d1eeee;
     width: auto;
     position: absolute;
     left: 36.8em;
@@ -2739,7 +2739,7 @@ th {
   }
 
   #sanat-menu {
-    background-color: #e9e3f9;
+    background-color: #d1eeee;
     width: auto;
     position: absolute;
     left: 12.8em;
@@ -2760,6 +2760,37 @@ th {
   }
 
   #sanat-menu ul li {
+    line-height: 30px;
+  }
+
+  #linkit-menu-btn {
+    margin-left: 85px;
+    font-size: 18px !important;
+    cursor: pointer;
+  }
+
+  #linkit-menu {
+    background-color: #d1eeee;
+    width: auto;
+    position: absolute;
+    right: 1.8em;
+    top: 7em;
+    padding-left: 0.5em !important;
+    padding-right: 0.5em !important;
+    z-index: 9999;
+    opacity: 1;
+    font-size: 16px;
+    border-radius: 2px;
+    border: solid 1px black;
+  }
+
+  #linkit-menu ul {
+    margin: 0;
+    padding: 0.5em;
+    list-style-type: none;
+  }
+
+  #linkit-menu ul li {
     line-height: 30px;
   }
 

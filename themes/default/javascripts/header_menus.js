@@ -40,4 +40,12 @@ $(document).ready(function() {
      }
    });
 
+   $('#linkit-menu-btn').click(function() {
+
+     if ($('#linkit-menu').is(':hidden')) {
+       $('#linkit-menu').slideDown('fast', function() {});
+     } else {
+       $('#linkit-menu').slideUp('fast', function() {});
+     }
+   });
 });
