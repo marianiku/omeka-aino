@@ -48,4 +48,13 @@ $(document).ready(function() {
        $('#linkit-menu').slideUp('fast', function() {});
      }
    });
+
+   $('#tiedot-menu-btn').click(function() {
+
+     if ($('#tiedot-menu').is(':hidden')) {
+       $('#tiedot-menu').slideDown('fast', function() {});
+     } else {
+       $('#tiedot-menu').slideUp('fast', function() {});
+     }
+   });
 });
