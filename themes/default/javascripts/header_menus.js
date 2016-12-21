@@ -40,6 +40,15 @@ $(document).ready(function() {
      }
    });
 
+   $('#kerrostumat-menu-btn').click(function() {
+
+     if ($('#kerrostumat-menu').is(':hidden')) {
+       $('#kerrostumat-menu').slideDown('fast', function() {});
+     } else {
+       $('#kerrostumat-menu').slideUp('fast', function() {});
+     }
+   });
+
    $('#linkit-menu-btn').click(function() {
 
      if ($('#linkit-menu').is(':hidden')) {

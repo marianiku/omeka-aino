@@ -119,7 +119,7 @@
     <span style="width:99%;float:left;margin-right:16px;margin-top:20px;margin-bottom:0;">
         <a id="infobtn">Aino Kalevalassa</a>
         <a id="sanat-menu-btn">Aino-runon sanat</a>
-        <a style="margin-left:40px;font-size:18px;" href="<?php echo html_escape(url('kerrostumat')); ?>">Runon kerrostumat</a>
+        <a id="kerrostumat-menu-btn">Runon kerrostumat</a>
         <a id="kaukonen-menu-btn">Väinö Kaukosen säetutkimus</a>
         <a id="tiedot-menu-btn">Julkaisun tiedot</a>
         <a id="linkit-menu-btn">Linkit</a>
@@ -129,6 +129,12 @@
       <ul>
         <li><a href="<?php echo html_escape(url('sanat/selitykset')); ?>">Sananselitykset</a></li>
         <li><a href="<?php echo html_escape(url('sanat/periaatteet')); ?>">Sananselitysten periaatteet</a></li>
+      </ul>
+    </div>
+    <div id="kerrostumat-menu" style="display:none;">
+      <ul>
+        <li><a href="<?php echo html_escape(url('kerrostumat/versiot')); ?>">Runon kerrostumat</a></li>
+        <li><a href="<?php echo html_escape(url('kerrostumat/periaatteet')); ?>">Tietoja</a></li>
       </ul>
     </div>
     <div id="kaukonen-menu" style="display:none;">
@@ -154,6 +160,7 @@
     </div>
     <div id="instructions" style="display: none;">
       <ul>
+        <li><a href="<?php echo html_escape(url('ohjeet/taustaa')); ?>">Aino-runo ja sen taustat</a></li>
         <li><a href="<?php echo html_escape(url('ohjeet/toimitus')); ?>">Lönnrotin toimitustavat</a></li>
       </ul>
     </div>

@@ -2763,6 +2763,37 @@ th {
     line-height: 30px;
   }
 
+  #kerrostumat-menu-btn {
+    margin-left: 40px;
+    font-size: 18px !important;
+    cursor: pointer;
+  }
+
+  #kerrostumat-menu {
+    background-color: #d1eeee;
+    width: auto;
+    position: absolute;
+    left: 24.1em;
+    top: 7em;
+    padding-left: 0.5em !important;
+    padding-right: 0.5em !important;
+    z-index: 9999;
+    opacity: 1;
+    font-size: 16px;
+    border-radius: 2px;
+    border: solid 1px black;
+  }
+
+  #kerrostumat-menu ul {
+    margin: 0;
+    padding: 0.5em;
+    list-style-type: none;
+  }
+
+  #kerrostumat-menu ul li {
+    line-height: 30px;
+  }
+
   #linkit-menu-btn {
     margin-left: 40px;
     font-size: 18px !important;
