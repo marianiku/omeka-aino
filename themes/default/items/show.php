@@ -56,12 +56,10 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'body
       $files = $item->Files;
       foreach ($files as $file):
         if ($file->getExtension() == 'xml'):
-          $xmlUrl = "http://".$_SERVER['SERVER_NAME']."/omeka/files/original/".metadata($file,'filename');
-          $xslUrl = "http://".$_SERVER['SERVER_NAME']."/omeka/files/original/TEI-to-HTML.xsl";
           $xmlDoc = new DOMDocument();
-          $xmlDoc->load($xmlUrl);
+          $xmlDoc->load("http://".$_SERVER['SERVER_NAME']."/omeka/files/original/".metadata($file,'filename'));
           $xslDoc = new DOMDocument();
-          $xslDoc->load($xslUrl);
+          $xslDoc->load("http://".$_SERVER['SERVER_NAME']."/omeka/files/original/TEI-to-HTML.xsl");
           $proc = new XSLTProcessor();
           $proc->importStylesheet($xslDoc);
           echo $proc->transformToXML($xmlDoc);

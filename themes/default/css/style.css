@@ -2680,7 +2680,7 @@ th {
     background-color: #d1eeee;
     width: auto;
     position: absolute;
-    left: 1.3em;
+    left: 16.1em;
     top: 7em;
     padding-left: 0.5em !important;
     padding-right: 0.5em !important;
@@ -2711,7 +2711,7 @@ th {
     background-color: #d1eeee;
     width: auto;
     position: absolute;
-    left: 36.8em;
+    left: 51.9em;
     top: 7em;
     padding-left: 0.5em !important;
     padding-right: 0.5em !important;
@@ -2742,7 +2742,7 @@ th {
     background-color: #d1eeee;
     width: auto;
     position: absolute;
-    left: 12.8em;
+    left: 27.3em;
     top: 7em;
     padding-left: 0.5em !important;
     padding-right: 0.5em !important;
@@ -2773,7 +2773,7 @@ th {
     background-color: #d1eeee;
     width: auto;
     position: absolute;
-    left: 24.1em;
+    left: 39.1em;
     top: 7em;
     padding-left: 0.5em !important;
     padding-right: 0.5em !important;
@@ -2804,7 +2804,7 @@ th {
     background-color: #d1eeee;
     width: auto;
     position: absolute;
-    right: 16em;
+    left: 58em;
     top: 7em;
     padding-left: 0.5em !important;
     padding-right: 0.5em !important;
@@ -2835,7 +2835,7 @@ th {
     background-color: #d1eeee;
     width: auto;
     position: absolute;
-    right: 18em;
+    left: 68.9em;
     top: 7em;
     padding-left: 0.5em !important;
     padding-right: 0.5em !important;
@@ -2868,6 +2868,9 @@ th {
     margin-left: 50px;
   }
 
+ a.comm {
+   background-color: #ff89ee !important;
+ }
   .
 
   /* @end */

@@ -36,7 +36,6 @@
   if ($recentItems):
     ?>
     <div id="recent-items">
-      <h3><a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/omeka/items/show/1'; ?>">Aino-runon neljäs runo</a></h3>
       <a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/omeka/items/show/1'; ?>"><img src="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/omeka/files/original/f0d818605a527c592e530b3d36b24e21.jpg';?>" width="600px" /></a>
     </div><!--end recent-items -->
   <?php endif; ?>

@@ -117,6 +117,7 @@
   </div>
   <div id="search-container" role="search">
     <span style="width:99%;float:left;margin-right:16px;margin-top:20px;margin-bottom:0;">
+        <a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/omeka/items/show/1'; ?>" style="margin-left:16px;margin-right:30px;font-size:18px;">Aino-runon neljäs runo</a>
         <a id="infobtn">Aino Kalevalassa</a>
         <a id="sanat-menu-btn">Aino-runon sanat</a>
         <a id="kerrostumat-menu-btn">Runon kerrostumat</a>
