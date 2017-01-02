@@ -10,18 +10,7 @@ queue_js_file('jquery-image-viewer-xhtml');
 
 echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'bodyclass' => 'item show')); ?>
 
-<h1><?php echo metadata('item', array('Dublin Core', 'Title')); ?>
-  <span style="float:right;">
-    <?php
-    $files = $item->Files;
-    foreach ($files as $file):
-      if ($file->getExtension() == 'xml'):
-        echo '<a class="xmlBt" href="'.$_SERVER['SERVER_NAME'].'/omeka/files/original/'.metadata($file,'filename').'">
-        <span class="xml">XML</span></a>';
-      endif;
-    endforeach; ?>
-  </span>
-</h1>
+<h1><?php echo metadata('item', array('Dublin Core', 'Title')); ?></h1>
 
 <div id="exhibit2">
   <div id="exhibit2a">
@@ -67,10 +56,12 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'body
       $files = $item->Files;
       foreach ($files as $file):
         if ($file->getExtension() == 'xml'):
+          $xmlUrl = "http://".$_SERVER['SERVER_NAME']."/omeka/files/original/".metadata($file,'filename');
+          $xslUrl = "http://".$_SERVER['SERVER_NAME']."/omeka/files/original/TEI-to-HTML.xsl";
           $xmlDoc = new DOMDocument();
-          $xmlDoc->load("http://".$_SERVER['SERVER_NAME']."/omeka/files/original/".metadata($file,'filename'));
+          $xmlDoc->load($xmlUrl);
           $xslDoc = new DOMDocument();
-          $xslDoc->load("http://".$_SERVER['SERVER_NAME']."/omeka/files/original/TEI-to-HTML.xsl");
+          $xslDoc->load($xslUrl);
           $proc = new XSLTProcessor();
           $proc->importStylesheet($xslDoc);
           echo $proc->transformToXML($xmlDoc);
