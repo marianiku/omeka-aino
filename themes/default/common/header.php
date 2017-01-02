@@ -111,13 +111,18 @@
   <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
   <div id="site-title" style="width:98%;height:10%;">
     <?php echo link_to_home_page(); ?>
-     <a href="http://www.finlit.fi" target="_blank">
-      <img width="200px" style="float:right;margin-right:16px;" src="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/omeka/sks_header_logo.png';?>" />
-    </a>
+    <span style="float:right;">
+      <a href="http://kalevalaseura.fi" target="_blank">
+        <img style="width:60px;float:right;margin-right:16px;" src="http://kalevalaseura.fi/wp-content/themes/kalevalaseura/i/logo-footer.png" />
+      </a>
+      <a href="http://www.finlit.fi" target="_blank">
+        <img width="230px" style="float:right;margin-right:16px;" src="<?php echo 'http://www.finlit.fi/sites/all/themes/kt_base/sks_header_logo.png';?>" />
+      </a>
+    </span>
   </div>
   <div id="search-container" role="search">
     <span style="width:99%;float:left;margin-right:16px;margin-top:20px;margin-bottom:0;">
-        <a href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/omeka/items/show/1'; ?>" style="margin-left:16px;margin-right:30px;font-size:18px;">Aino-runon neljäs runo</a>
+        <a href="<?php echo 'http://aino.finlit.fi/omeka/items/show/1'; ?>" style="margin-left:16px;margin-right:30px;font-size:18px;">Aino-runon neljäs runo</a>
         <a id="infobtn">Aino Kalevalassa</a>
         <a id="sanat-menu-btn">Aino-runon sanat</a>
         <a id="kerrostumat-menu-btn">Runon kerrostumat</a>

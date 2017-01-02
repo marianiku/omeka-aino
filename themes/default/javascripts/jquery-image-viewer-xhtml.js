@@ -18,6 +18,8 @@ $(document).ready(function() {
         ending = ending.substring(0, ending.indexOf(";"));
       } else if (ending.indexOf(":") >= 0) {
         ending = ending.substring(0, ending.indexOf(":"));
+      } else if (ending.indexOf("!") >= 0) {
+        ending = ending.substring(0, ending.indexOf("!"));
       }
 
       var str = key + ending;
