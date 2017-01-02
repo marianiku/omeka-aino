@@ -141,6 +141,7 @@
       <ul>
         <li><a href="<?php echo html_escape(url('kerrostumat/versiot')); ?>">Runon kerrostumat</a></li>
         <li><a href="<?php echo html_escape(url('kerrostumat/periaatteet')); ?>">Tietoja</a></li>
+        <li><a href="<?php echo html_escape(url('kerrostumat/toimitusperiaatteet')); ?>">Aino-runon tekstikriittiset toimitusperiaatteet</a></li>
       </ul>
     </div>
     <div id="kaukonen-menu" style="display:none;">
