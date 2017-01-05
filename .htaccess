@@ -23,7 +23,7 @@ RewriteEngine on
 # errors, uncomment the line below and replace "/" with your base directory.
 #
 
-RewriteBase /omeka-aino/
+RewriteBase /omeka/
 
 # Allow direct access to files (except PHP files)
 RewriteCond %{REQUEST_FILENAME} -f
