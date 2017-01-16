@@ -36,7 +36,7 @@
   if ($recentItems):
     ?>
     <div id="recent-items">
-      <a href="<?php echo 'http://localhost/omeka-aino/items/show/4'; ?>"><img src="<?php echo 'http://localhost/omeka-aino/files/original/5298d8167ebab09fc9ac9872328113fa.jpg';?>" width="600px" /></a>
+      <a href="<?php echo 'http://aino.finlit.fi/omeka/items/show/1'; ?>"><img src="<?php echo 'http://aino.finlit.fi/omeka/aino-etusivun_kuva.jpg';?>" width="600px" /></a>
     </div><!--end recent-items -->
   <?php endif; ?>
 
