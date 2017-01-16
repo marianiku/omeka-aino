@@ -57,9 +57,9 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'body
       foreach ($files as $file):
         if ($file->getExtension() == 'xml'):
           $xmlDoc = new DOMDocument();
-          $xmlDoc->load("http://localhost/omeka/files/original/".metadata($file,'filename'));
+          $xmlDoc->load("http://aino.finlit.fi/omeka/files/original/".metadata($file,'filename'));
           $xslDoc = new DOMDocument();
-          $xslDoc->load("http://localhost/omeka/files/original/TEI-to-HTML.xsl");
+          $xslDoc->load("http://aino.finlit.fi/files/original/TEI-to-HTML.xsl");
           $proc = new XSLTProcessor();
           $proc->importStylesheet($xslDoc);
           echo $proc->transformToXML($xmlDoc);
