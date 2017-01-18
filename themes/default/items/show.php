@@ -28,7 +28,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'body
       $files = $item->Files;
       foreach ($files as $file):
         if ($file->getExtension() == 'jpg'):
-          echo '<img class="pic" style="background:transparent" src="http://aino.finlit.fi/omeka/files/original/"'.metadata
+          echo '<img class="pic" style="background:transparent" src="http://aino.finlit.fi/omeka/files/original/'.metadata
           ($file,'filename').'" />';
         endif;
       endforeach; ?>
