@@ -145,9 +145,9 @@
     </div>
     <div id="kaukonen-menu" style="display:none;">
       <ul>
-        <li><a href="<?php echo html_escape(url('kaukonen/saetutkimus')); ?>">Kaukosen säeviitteet</a></li>
+        <li><a href="<?php echo html_escape(url('kaukonen/saetutkimus')); ?>">Väinö Kaukosen säeviitteet</a></li>
         <li><a href="<?php echo html_escape(url('kaukonen/taustaa')); ?>">Säetutkimuksen taustaa</a></li>
-        <li><a href="<?php echo html_escape(url('kaukonen/ohjeita')); ?>">Säetutkimuksen viitteet ja kommentaarit</a></li>
+        <li><a href="<?php echo html_escape(url('kaukonen/ohjeita')); ?>">Säetutkimuksen merkintätapojen selitykset</a></li>
       </ul>
     </div>
     <div id="tiedot-menu" style="display:none;">
