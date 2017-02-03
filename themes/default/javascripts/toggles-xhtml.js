@@ -1,6 +1,6 @@
   // Merkintöjen näyttäminen/piilottaminen PHP-käännetyssä XML-transkriptiossa (UV-plugin)
 
-        
+
   function toggleMarkingsXML() {
 
      var doc = document.getElementById('exhibit3b');
@@ -38,9 +38,9 @@
   }
 
   function toggleCommentsXML() {
-     
+
      $(document).ready(function() {
-       
+
         function classExists() {
            if ($('#exhibit3b').find('.comm').hasClass('tooltip bt')) {
                return true;
@@ -62,7 +62,7 @@
            .hover(function() { $(this).css('text-decoration', ''); })
            .find('span')
            .css('display', '');
-        }      
+        }
      });
   }
 
@@ -79,7 +79,7 @@
            elems[i].style.color = "#f22b0e"
         } else {
            elems[i].style.textDecoration = "none";
-           elems[i].style.color = "#444444";           
+           elems[i].style.color = "#444444";
         }
      }
 
@@ -106,9 +106,9 @@
 
   // Piilota/näytä kommentit
   function toggleCommentsHTML2() {
-     
+
      $(document).ready(function() {
-       
+
         function classExists() {
            if ($('#exhibit2b').find('.comm').hasClass('tooltip bt')) {
                return true;
@@ -120,18 +120,17 @@
         if (classExists()) {
            $('#exhibit2b').find('.comm')
            .removeClass('tooltip bt')
-           .css({'color':'#444444','border-bottom':'none'})
+           .css({'background-color':'#ffffff','border-bottom':'none'})
            .hover(function() { $(this).css('text-decoration', 'none'); })
            .find('span').hide();
         } else {
            $('#exhibit2b').find('.comm')
            .addClass('tooltip bt')
-           .css({'color':'','border-bottom':''})
+           .css({'background-color':'','border-bottom':''})
            .hover(function() { $(this).css('text-decoration', ''); })
            .find('span')
            .css('display', '');
         }
-        
+
      });
   }
-
