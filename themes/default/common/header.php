@@ -139,8 +139,9 @@
     </div>
     <div id="kerrostumat-menu" style="display:none;">
       <ul>
+        <li><a href="<?php echo html_escape(url('kerrostumat/toimitusperiaatteet')); ?>">Aino-runon tekstikriittiset toimitusperiaatteet</a></li>
+        <li><a href="<?php echo html_escape(url('kerrostumat/periaatteet')); ?>">Tietoja runon kerrostumista</a></li>
         <li><a href="<?php echo html_escape(url('kerrostumat/versiot')); ?>">Runon kerrostumat</a></li>
-        <li><a href="<?php echo html_escape(url('kerrostumat/periaatteet')); ?>">Tietoja</a></li>
       </ul>
     </div>
     <div id="kaukonen-menu" style="display:none;">
@@ -168,7 +169,6 @@
       <ul>
         <li><a href="<?php echo html_escape(url('ohjeet/taustaa')); ?>">Aino-runo ja sen taustat</a></li>
         <li><a href="<?php echo html_escape(url('ohjeet/toimitus')); ?>">Lönnrotin toimitustavat</a></li>
-        <li><a href="<?php echo html_escape(url('ohjeet/toimitusperiaatteet')); ?>">Aino-runon tekstikriittiset toimitusperiaatteet</a></li>
       </ul>
     </div>
   </header>
